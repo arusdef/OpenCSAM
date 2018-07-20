@@ -1,0 +1,6 @@
+---
+es_cluster_name: enisadb
+es_network_host: _ens192_,_local_
+es_http_port: 9200
+es_logs_path: "/var/log/elasticsearch"
+es_data_path: "/var/data/elasticsearch"

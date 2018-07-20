@@ -1,0 +1,53 @@
+---
+
+- name: Enable firewalld
+  service: name=firewalld state=started enabled=yes
+
+- name: Open firewalld kibana service
+  firewalld:
+    service: kibana
+    permanent: true
+    state: enabled
+  notify:
+    - reload firewalld
+
+- name: Add Elasticsearch GPG key
+  rpm_key:
+    key: https://packages.elastic.co/GPG-KEY-elasticsearch
+    state: present
+
+- name: Add Elasticsearch repository
+  copy:
+    src: elasticsearch.repo
+    dest: /etc/yum.repos.d/elasticsearch.repo
+    mode: 0644
+
+- name: Install Kibana
+  yum: pkg=kibana state=present
+
+- name: Create Kibana config directory
+  file:
+    path: "{{ kibana_config_dir }}"
+    state: directory
+    owner: kibana
+    group: kibana
+
+- name: Setup Kibana config
+  template:
+    src: kibana.yml.j2
+    dest: "{{ kibana_config_path }}"
+    owner: kibana
+    group: kibana
+  register: kibana_config
+
+- name: Restart Kibana after config changes
+  when: kibana_config.changed
+  service:
+    name: kibana
+    state: restarted
+
+- name: Start and enable Kibana on startup
+  service:
+    name: kibana
+    enabled: yes
+    state: started

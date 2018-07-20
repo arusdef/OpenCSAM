@@ -1,0 +1,35 @@
+- hosts: elasticsearch
+  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
+  roles:
+    - elasticsearch
+  become: true
+  become_method: sudo
+  tags:
+    - elasticsearch
+
+- hosts: kibana
+  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
+  roles:
+    - kibana
+  become: true
+  become_method: sudo
+  tags:
+    - kibana
+
+- hosts: jenkins
+  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
+  roles:
+    - jenkins
+  become: true
+  become_method: sudo
+  tags:
+    - jenkins
+
+- hosts: nginx
+  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
+  roles:
+    - nginx
+  become: true
+  become_method: sudo
+  tags:
+    - nginx

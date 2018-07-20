@@ -1,0 +1,7 @@
+external_storage_mount_point: "/var/data"
+tmp_dir: "/tmp"
+
+# vault
+proxy_http_auth_users: "{{ vault_proxy_http_auth_users }}"
+server_key: "{{ vault_server_key }}"
+server_crt: "{{ vault_server_crt }}"

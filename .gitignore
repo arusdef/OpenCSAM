@@ -1,0 +1,31 @@
+# Generic Exclusions
+.DS_Store
+.vscode
+
+# Project Specific Exclusions
+.ipynb_checkpoints/
+*/jupyterhub/config.yaml
+*/documents/*pdf
+*/plaintext/*json
+build/
+project.egg-info/
+.idea/
+
+# Secure Keys
+*_rsa
+*_rsa.pub
+*.key
+
+# Python
+__pycache__
+*.jsonlines
+*.pyc
+
+# Ansible
+*.retry
+.vault_password
+*.crt
+*.csr
+*.key
+*.p12
+*.pfx

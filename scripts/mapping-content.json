@@ -1,0 +1,298 @@
+{
+    "mappings": {
+        "article": {
+            "properties": {
+                "content": {
+                    "type": "text",
+                    "fields": {
+                        "knowledge_graph": {
+                            "type": "text",
+                            "analyzer": "custom_text_analyzer",
+                            "search_analyzer": "knowledge_graph_analyzer"
+                        },
+                        "processed": {
+                            "type": "text",
+                            "analyzer": "custom_text_analyzer"
+                        },
+                        "tagged": {
+                            "type": "text",
+                            "analyzer": "custom_text_analyzer",
+                            "fielddata": true,
+                            "fielddata_frequency_filter": {
+                                "min": 0.001,
+                                "max": 0.1,
+                                "min_segment_size": 10
+                            }
+                        }
+                    }
+                },
+                "link": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                },
+                "published": {
+                    "type": "date"
+                },
+                "resource_label": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                },
+                "resource_type": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                },
+                "title": {
+                    "type": "text",
+                    "fields": {
+                        "knowledge_graph": {
+                            "type": "text",
+                            "analyzer": "custom_text_analyzer",
+                            "search_analyzer": "knowledge_graph_analyzer"
+                        },
+                        "processed": {
+                            "type": "text",
+                            "analyzer": "custom_text_analyzer"
+                        },
+                        "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "settings": {
+        "analysis": {
+            "filter": {
+                "length_min": {
+                    "type": "length",
+                    "min": 3
+                },
+                "english_stop": {
+                    "type": "stop",
+                    "stopwords": [
+                        "_english_", "the", "be", "and", "of", "a", "in", "to", "have", "to",
+                        "it", "i", "that", "for", "you", "he", "with", "on", "do", "say", "this",
+                        "they", "at", "but", "we", "his", "from", "that", "not", "n't", "by",
+                        "she", "or", "as", "what", "go", "their", "can", "who", "get", "if",
+                        "would", "her", "all", "my", "make", "about", "know", "will", "as", "up",
+                        "one", "time", "there", "year", "so", "think", "when", "which", "them",
+                        "some", "me", "people", "take", "out", "into", "just", "see", "him",
+                        "your", "come", "could", "now", "than", "like", "other", "how", "then",
+                        "its", "our", "two", "more", "these", "want", "way", "look", "first",
+                        "also", "new", "because", "day", "more", "use", "no", "man", "find",
+                        "here", "thing", "give", "many", "well", "only", "those", "tell", "one",
+                        "very", "her", "even", "back", "any", "good", "had", "does", "doesn't"
+                    ]
+                },
+                "english_keywords": {
+                    "type": "keyword_marker",
+                    "keywords": ["example"]
+                },
+                "light_english_stemmer": {
+                    "type": "stemmer",
+                    "language": "light_english"
+                },
+                "english_possessive_stemmer": {
+                    "type": "stemmer",
+                    "language": "possessive_english"
+                },
+                "knowledge_graph": {
+                    "type": "synonym",
+                    "synonyms": [
+                        "privacy => privacy",
+                        "accountability => accountability",
+                        "authenticity => authenticity",
+                        "integrity => integrity",
+                        "trustworthiness => trustworthiness",
+                        "confidentiality => confidentiality",
+                        "availability => availability",
+                        "auditability => auditability",
+                        "non-repudiation => non-repudiation",
+                        "general terms => general terms, privacy, accountability, authenticity, integrity, trustworthiness, confidentiality, availability, auditability, non-repudiation",
+
+                        "directives => directives, network and information security directive, nis directive, nis, national law",
+                        "ban => ban",
+                        "regulation => regulation, general data protection regulation, gdpr, electronic identification authentication and trust services regulation, eidas",
+                        "cybersecurity strategy => cybersecurity strategy",
+                        "cybersecurity doctrine => cybersecurity doctrine",
+                        "policy => policy, directives, network and information security directive, nis directive, nis, national law, ban, regulation, general data protection regulation, gdpr, electronic identification authentication and trust services regulation, eidas, cybersecurity strategy, cybersecurity doctrine",
+
+                        "fake news => fake news",
+                        "elections => elections",
+                        "cyber conflict => cyber conflict",
+                        "disinformation => disinformation",
+                        "destabilization => destabilization",
+                        "information warfare => information warfare",
+                        "psychological warfare => psychological warfare",
+                        "cyber war => cyber war",
+                        "deterrence => deterrence",
+                        "propaganda => propaganda",
+                        "government interference => government interference",
+                        "geopolitics => geopolitics, fake news, elections, cyber conflict, disinformation, destabilization, information warfare, psychological warfare, cyber war, deterrence, propaganda, government interference",
+
+                        "nation states => nation states",
+                        "cyber-terrorists => cyber-terrorists",
+                        "insiders => insiders",
+                        "cyber-criminals => cyber-criminals",
+                        "hacktivists => hacktivists",
+                        "script-kidies => script-kidies",
+                        "corporations => corporations",
+                        "threat actors => threat actors, nation states, cyber-terrorists, insiders, cyber-criminals, hacktivists, script-kidies, corporations",
+
+                        "ipo => ipo",
+                        "acquisition => acquisition",
+                        "sme => sme",
+                        "award => award",
+                        "operator of essential service => operator of essential service",
+                        "merger => merger",
+                        "insurance => insurance",
+                        "stock market => stock market",
+                        "partnership => partnership",
+                        "stock options => stock options",
+                        "fine => fine",
+                        "funding => funding",
+                        "technology companies => technology companies, google, amazon, facebook, apple, twitter, linkedin",
+                        "industry => industry",
+                        "valuation => valuation",
+                        "black market => black market",
+                        "startup => startup",
+                        "cybersecurity companies => cybersecurity companies",
+                        "public private partnerships, ppp => public private partnerships, ppp",
+                        "alliance => alliance",
+                        "bankruptcy => bankruptcy",
+                        "critical infrastructure => critical infrastructure",
+                        "business => business, ipo, acquisition, sme, award, operator of essential service, merger, insurance, stock market, partnership, stock options, fine, funding, technology companies, google, amazon, facebook, apple, twitter, linkedin, industry, valuation, black market, startup, cybersecurity companies, public private partnerships, ppp, alliance, bankruptcy, critical infrastructure",
+
+                        "cyber espionage => cyber espionage, nation state espionage, corporation espionage, financial espionage, targeted attacks, denial and deception",
+                        "information leakage => information leakage, misconfiguration, data leaks, personal data",
+                        "botnets => botnets, ddos, iot botnet",
+                        "denial of service => denial of service, amplification attacks, reflection attacks",
+                        "data breaches => data breaches, personal data, exploitation, hacking, security vulnerabilities, security incident, credential theft, data dump",
+                        "exploit kits => exploit kits, vulnerabilities, zero-day, 0-day",
+                        "phishing => phishing, social engineering, spear-phishing, malware, spam, data stealing",
+                        "web application attacks => web application attacks, cross-site scripting, xss, local file inclusion, lfi, remote file inclusion, rfi, sql injection, cross-site request forgery, csrf",
+                        "spam => spam, social engineering, malware",
+                        "insider threat => insider threat, human error, malicious insider, cyber espionage, un-authorised access, data leak",
+                        "identity theft => identity theft, social engineering, social media abuse, dark web shopping, confidential information, sensitive information, impersonation, credential stealing, personal information, personal data",
+                        "vulnerabilities => vulnerabilities, zero-day, 0-day, exploitation, hardware vulnerabilities, software vulnerabilities",
+                        "physical manipulation damage => physical manipulation damage, outage, failures, malfunction, environmental disaster, natural disaster, physical attack, damage caused by third party",
+                        "malware => malware, advanced persistent threat, apt, virus, worm, ransomware, trojan, cryptominer, rootkit, bootkit, backdoor, spyware, scareware, addware, keylogger",
+                        "web based attacks => web based attacks, drive-by downloads, cryptojacking, man-in-the-browser, waterholing, supply-chain attack",
+                        "threats => threats, cyber espionage, nation state espionage, corporation espionage, financial espionage, targeted attacks, denial and deception, information leakage, misconfiguration, data leaks, personal data, botnets, ddos, iot botnet, denial of service, amplification attacks, reflection attacks, data breaches, personal data, exploitation, hacking, security vulnerabilities, security incident, credential theft, data dump, exploit kits, vulnerabilities, zero-day, 0-day, phishing, social engineering, spear-phishing, malware, spam, data stealing, web application attacks, cross-site scripting, xss, local file inclusion, lfi, remote file inclusion, rfi, sql injection, cross-site request forgery, csrf, spam, social engineering, malware, insider threat, human error, malicious insider, cyber espionage, un-authorised access, data leak, identity theft, social engineering, social media abuse, dark web shopping, confidential information, sensitive information, impersonation, credential stealing, personal information, personal data, vulnerabilities, zero-day, 0-day, exploitation, hardware vulnerabilities, software vulnerabilities, physical manipulation damage, outage, failures, malfunction, environmental disaster, natural disaster, physical attack, damage caused by third party, malware, advanced persistent threat, apt, virus, worm, ransomware, trojan, cryptominer, rootkit, bootkit, backdoor, spyware, scareware, addware, keylogger, web based attacks, drive-by downloads, cryptojacking, man-in-the-browser, waterholing, supply-chain attack",
+
+                        "log management software => log management software",
+                        "multi-factor authentication => multi-factor authentication",
+                        "siem => siem",
+                        "e-mail screening => e-mail screening",
+                        "ransomware prevention => ransomware prevention",
+                        "anti-subversion software => anti-subversion software",
+                        "security information management => security information management",
+                        "records management => records management",
+                        "intrusion detection system, ids => intrusion detection system, ids",
+                        "cryptographic software => cryptographic software",
+                        "anti-keyloggers => anti-keyloggers",
+                        "access control => access control",
+                        "anti-tamper software => anti-tamper software",
+                        "anti-malware => anti-malware",
+                        "vpn => vpn",
+                        "computer aided dispatch, cad => computer aided dispatch, cad",
+                        "antivirus software => antivirus software",
+                        "secure coding => secure coding",
+                        "anti-spyware => anti-spyware",
+                        "firewall => firewall",
+                        "secure operating systems => secure operating systems",
+                        "hardware security module => hardware security module",
+                        "intrusion prevention system, ips => intrusion prevention system, ips",
+                        "sandbox => sandbox",
+                        "security by design => security by design",
+                        "security software and hardware => security software and hardware, log management software, multi-factor authentication, siem, e-mail screening, ransomware prevention, anti-subversion software, security information management, records management, intrusion detection system, ids, cryptographic software, anti-keyloggers, access control, anti-tamper software, anti-malware, vpn, computer aided dispatch, cad, antivirus software, secure coding, anti-spyware, firewall, secure operating systems, hardware security module, intrusion prevention system, ips, sandbox, security by design",
+
+                        "software => software",
+                        "data => data",
+                        "physical assets equipment, devices, hardware => physical assets equipment, devices, hardware",
+                        "information => information",
+                        "brand => brand",
+                        "reputation => reputation",
+                        "intellectual property, ip => intellectual property, ip",
+                        "people => people",
+                        "services => services",
+                        "assets => assets, software, data, physical assets equipment, devices, hardware, information, brand, reputation, intellectual property, ip, people, services",
+
+                        "big data => big data",
+                        "machine learning => machine learning",
+                        "artificial intelligence => artificial intelligence",
+                        "virtual reality, vr => virtual reality, vr",
+                        "deep learning => deep learning",
+                        "autonomous systems => autonomous systems",
+                        "industrial control systems, ics => industrial control systems, ics",
+                        "iot => iot",
+                        "nano technology => nano technology",
+                        "quantum computing => quantum computing",
+                        "biometrics => biometrics",
+                        "cloud technology => cloud technology",
+                        "blockchain => blockchain",
+                        "augmented reality, ar => augmented reality, ar",
+                        "smart infrastructure => smart infrastructure",
+                        "robotics => robotics",
+                        "software-defined networking, sdn => software-defined networking, sdn, 5g",
+                        "emerging technology => emerging technology, big data, machine learning, artificial intelligence, virtual reality, vr, deep learning, autonomous systems, industrial control systems, ics, iot, nano technology, quantum computing, biometrics, cloud technology, blockchain, augmented reality, ar, smart infrastructure, robotics, software-defined networking, sdn, 5g"
+                    ]
+                },
+                "synonyms": {
+                    "type": "synonym",
+                    "synonyms": [
+                        "network and information security directive, nis directive, nis => network and information security directive, nis directive, nis",
+                        "general data protection regulation, gdpr => general data protection regulation, gdpr",
+                        "electronic identification authentication and trust services regulation, eidas => electronic identification authentication and trust services regulation, eidas",
+                        "public private partnerships, ppp => public private partnerships, ppp",
+                        "amplification attacks, reflection attacks => amplification attacks, reflection attacks",
+                        "zero-day, 0-day => zero-day, 0-day",
+                        "cross-site scripting, xss => cross-site scripting, xss",
+                        "local file inclusion, lfi => local file inclusion, lfi",
+                        "remote file inclusion, rfi => remote file inclusion, rfi",
+                        "cross-site request forgery, csrf => cross-site request forgery, csrf",
+                        "confidential information, sensitive information => confidential information, sensitive information",
+                        "personal information, personal data => personal information, personal data",
+                        "zero-day, 0-day => zero-day, 0-day",
+                        "failures, malfunction => failures, malfunction",
+                        "advanced persistent threat, apt => advanced persistent threat, apt",
+                        "intrusion detection system, ids => intrusion detection system, ids",
+                        "computer aided dispatch, cad => computer aided dispatch, cad",
+                        "intrusion prevention system, ips => intrusion prevention system, ips",
+                        "physical assets equipment, devices, hardware => physical assets equipment, devices, hardware",
+                        "intellectual property, ip => intellectual property, ip",
+                        "virtual reality, vr => virtual reality, vr",
+                        "industrial control systems, ics => industrial control systems, ics",
+                        "augmented reality, ar => augmented reality, ar",
+                        "software-defined networking, sdn => software-defined networking, sdn"
+                    ]
+                }
+            },
+            "analyzer": {
+                "custom_text_analyzer": {
+                    "tokenizer": "standard",
+                    "char_filter": ["html_strip"],
+                    "filter": [
+                        "english_possessive_stemmer",
+                        "lowercase",
+                        "english_stop",
+                        "english_keywords",
+                        "light_english_stemmer",
+                        "asciifolding",
+                        "length_min"
+                    ]
+                },
+                "knowledge_graph_analyzer": {
+                    "tokenizer": "standard",
+                    "char_filter": ["html_strip"],
+                    "filter": [
+                        "lowercase",
+                        "knowledge_graph"
+                    ]
+                }
+            }
+        }
+    }
+}

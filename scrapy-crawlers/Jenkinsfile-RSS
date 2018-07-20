@@ -1,0 +1,64 @@
+properties([
+  buildDiscarder(logRotator(numToKeepStr: '50')),
+  disableConcurrentBuilds(),
+  parameters([
+    string(defaultValue: '172.16.221.85:9200', description: 'Elasticsearch URL', name: 'ES_URL', trim: false),
+    string(defaultValue: 'content', description: 'Elasticsearch Index', name: 'ES_INDEX', trim: false),
+    string(defaultValue: 'article', description: 'Elasticsearch Type', name: 'ES_TYPE', trim: false),
+    text(defaultValue: '''
+https://www.bleepingcomputer.com/feed/,bleepingcomputer
+http://feeds.arstechnica.com/arstechnica/security,arstechnica
+https://threatpost.com/feed/,threatpost
+https://www.darkreading.com/rss_simple.asp,darkreading
+https://www.csoonline.com/index.rss,csoonline
+http://feeds.feedburner.com/securityweek,securityweek
+https://securityaffairs.co/wordpress/feed,securityaffairs
+https://nakedsecurity.sophos.com/feed/,nakedsecurity
+http://feeds.feedburner.com/SecurityIntelligence,securityintelligence
+http://feeds.feedburner.com/bankinfosecurity/com,bankinfosecurity
+https://feeds.feedburner.com/CiscoBlogSecurity,cisco
+https://blog.malwarebytes.com/feed,malwarebytes
+http://www.itsecurityguru.org/feed,itsecurityguru
+https://www.euractiv.com/?feed=newsletter,euractiv
+https://www.politico.com/rss/morningcybersecurity.xml,politico
+https://www.wired.com/feed/category/security/latest/rss,wired
+https://www.secureworks.com/rss?feed=research&category=threat-analysis,secureworks
+http://feeds.trendmicro.com/Anti-MalwareBlog,trendmicro
+http://feeds.feedburner.com/TheHackersNews,thehackernews
+https://www.ncsc.gov.uk/feeds/reports.xml,ncsc
+http://feeds.feedburner.com/eset/blog,welivesecurity
+http://feeds.feedburner.com/securityweekly/XBIC,securityweekly
+https://cert.europa.eu/rss?type=category&id=CERT-LatestNews&language=en&duplicates=false,cert
+    ''', description: '', name: 'RSS_FEEDS')]),
+  pipelineTriggers([cron('H(0-10) * * * *')])
+])
+
+node {
+  stage("Pull docker image") {
+    sh """docker pull enisa2018/scrapy-crawlers:latest"""
+  }
+
+  params.RSS_FEEDS.split("\\r?\\n").each { line ->
+    if (line.trim() != '') {
+      def pair = line.trim().split(",")
+      def rssLink = pair[0]
+      def rssLabel = pair[1]
+      stage("Scrape RSS [${rssLabel}]") {
+        println "Scraping RSS [${rssLabel}] from ${rssLink}"
+        catchError {
+          sh """
+          docker run -i --rm \
+          -e "ES_URL=${params.ES_URL}" \
+          -e "ES_INDEX=${params.ES_INDEX}" \
+          -e "ES_TYPE=${params.ES_TYPE}" \
+          -e "RSS_LINK=${rssLink}" \
+          -e "RSS_LABEL=${rssLabel}" \
+          enisa2018/scrapy-crawlers:latest rss_crawler \
+          -s "LOG_LEVEL=WARN"
+          """
+        }
+        println "Scrape result is ${currentBuild.currentResult}"
+      }
+    }
+  }
+}

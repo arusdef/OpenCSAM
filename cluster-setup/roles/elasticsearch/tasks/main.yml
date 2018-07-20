@@ -1,0 +1,61 @@
+---
+
+- name: Enable firewalld
+  service: name=firewalld state=started enabled=yes
+
+- name: Open Elasticsearch port 9200
+  firewalld:
+    service: elasticsearch
+    permanent: true
+    state: enabled
+  notify:
+    - reload firewalld
+
+- name: Add Elasticsearch GPG key.
+  rpm_key:
+    key: https://packages.elastic.co/GPG-KEY-elasticsearch
+    state: present
+
+- name: Add Elasticsearch repository.
+  copy:
+    src: elasticsearch.repo
+    dest: /etc/yum.repos.d/elasticsearch.repo
+    mode: 0644
+
+- name: Install Elasticsearch.
+  yum: pkg=elasticsearch state=present
+
+- name: Create logs dir for Elasticsearch
+  file:
+    state: directory
+    path: "{{ es_logs_path }}"
+    owner: elasticsearch
+    group: elasticsearch
+
+- name: Create data dir for Elasticsearch
+  file:
+    state: directory
+    path: "{{ es_data_path }}"
+    owner: elasticsearch
+    group: elasticsearch
+
+- name: Configure Elasticsearch
+  template:
+    src: elasticsearch.yml.j2
+    dest: /etc/elasticsearch/elasticsearch.yml
+    owner: root
+    group: elasticsearch
+    mode: 0750
+  register: es_config
+
+- name: Restart Elasticsearch after config changes
+  when: es_config.changed
+  service:
+    name: elasticsearch
+    state: restarted
+
+- name: Start Elasticsearch and enable on startup
+  service: name=elasticsearch state=started enabled=yes
+
+- name: Make sure Elasticsearch is running before proceeding
+  wait_for: host=localhost port={{ es_http_port }} delay=3 timeout=300

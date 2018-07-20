@@ -1,0 +1,10 @@
+---
+
+- name: restart jenkins
+  service: name=jenkins state=restarted
+
+- name: restart firewalld
+  service: name=firewalld state=restarted
+
+- name: reload firewalld
+  command: firewall-cmd --reload

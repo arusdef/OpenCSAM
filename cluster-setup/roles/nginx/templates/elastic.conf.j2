@@ -1,0 +1,76 @@
+upstream elasticsearch {
+    server {{ elastic_listen_host[0] }}:{{ elastic_listen_port }};
+    server {{ elastic_listen_host[1] }}:{{ elastic_listen_port }};
+    server {{ elastic_listen_host[2] }}:{{ elastic_listen_port }};
+    keepalive 15;
+}
+
+server {
+    listen 443 ssl;
+    server_name {{ elastic_server_name }};
+    client_max_body_size 50M;
+
+    ssl_certificate {{ nginx_server_crt_file }};
+    ssl_certificate_key {{ nginx_server_key_file }};
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 10m;
+
+    location / {
+        # Deny Nodes Shutdown API
+        if ($request_filename ~ "_shutdown") {
+            return 403;
+            break;
+        }
+
+        # Deny Access to Cluster API
+        if ($request_filename ~ "_cluster") {
+            return 403;
+            break;
+        }
+
+        # Deny Delete Requests
+        if ($request_method ~ "DELETE") {
+            return 405;
+            break;
+        }
+
+        proxy_pass http://elasticsearch;
+        proxy_http_version 1.1;
+        proxy_read_timeout 600s;
+        proxy_redirect off;
+
+        # Keep-Alive Headers
+        proxy_set_header Connection "Keep-Alive";
+        proxy_set_header Proxy-Connection "Keep-Alive";
+
+        # Proxy Headers
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # Proxy CORS Headers
+        add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+        add_header 'Access-Control-Allow-Credentials' 'true' always;
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, OPTIONS' always;
+        add_header 'Access-Control-Allow-Headers' 'Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Requested-With' always;
+
+        if ($request_method = 'OPTIONS') {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Requested-With' always;
+
+            # Tell client that this pre-flight info is valid for 20 days
+            add_header 'Access-Control-Max-Age' 1728000;
+            add_header 'Content-Type' 'text/plain charset=UTF-8';
+            add_header 'Content-Length' 0;
+            return 204;
+        }
+
+        auth_basic "Restricted Access";
+        auth_basic_user_file {{ nginx_passwd_file }};
+    }
+}

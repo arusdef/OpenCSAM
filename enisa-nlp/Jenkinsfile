@@ -1,0 +1,23 @@
+properties([
+  buildDiscarder(logRotator(numToKeepStr: '50')),
+  disableConcurrentBuilds(),
+  parameters([
+    string(defaultValue: '172.16.221.85', description: 'Elasticsearch URL', name: 'ES_URL', trim: false),
+    string(defaultValue: '9200', description: 'Elasticsearch Port', name: 'ES_PORT', trim: false),
+  ]),
+  pipelineTriggers([cron('H H(6-8) * * *')])
+])
+
+node {
+  stage("Pull docker image") {
+    sh """docker pull enisa2018/enisa-nlp:latest"""
+  }
+  stage("Topics Modelling") {
+    sh """
+    docker run -i --rm \
+    -e "ES_URL=${params.ES_URL}" \
+    -e "ES_PORT=${params.ES_PORT}" \
+    enisa2018/enisa-nlp:latest
+    """
+  }
+}

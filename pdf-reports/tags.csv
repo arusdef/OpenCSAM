@@ -1,0 +1,352 @@
+name,topics,keywords
+national-cyber-security-strategies-an-implementation-guide,"['National Cyber Security Strategies', 'National Cyber Security Strategies Guidelines & tools']",['National Cyber Security Strategies']
+proactive-detection-report,"['Proactive Services', 'CSIRT Services', 'Proactive detection of incidents']",['CSIRTs']
+csirt-setting-up-guide-in-slovak,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+tf-tdca,"['National Cyber Security Strategies', 'Public Private Partnerships (PPPs)']",['Critical Information Infrastructure Protection (CIIP)']
+8th-enisa-workshop-certs-in-europe-report,[],['CSIRTs']
+mobile-eid,['Trust Services'],['eID']
+good-practice-guide-on-training-methodologies,['Trainings for Cyber Security Specialists'],['CSIRTs']
+technology-induced-challenges-in-privacy-data-protection-in-europe,"['Risk Management', 'Threat and Risk Management']","['Privacy', 'Identity & Trust', 'Trainings']"
+csirt-setting-up-guide-in-hungarian,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+looking-into-the-crystal-ball,[],"['Internet of things', 'Smart Cars', 'Cryptography', 'Smart Cities', 'Certification']"
+securing-personal-data-in-the-context-of-data-retention,"['Security of personal data', 'Security measures']",['Privacy']
+national-governmental-certs-enisas-recommendations-on-baseline-capabilities,"['CSIRTs in Europe', 'CSIRT Capabilities']",['CSIRTs']
+botnets-measurement-detection-disinfection-and-defence,"['Understanding the importance of the Internet Infrastructure...', 'Internet Infrastructure', 'Critical Infrastructures and Services']",[]
+incentives-and-barriers-of-the-cyber-insurance-market-in-europe,"['National Cyber Security Strategies', 'National Cyber Security Strategies Guidelines & tools']",['Critical Information Infrastructure Protection (CIIP)']
+etl2015,"['ENISA Threat Landscape', 'Cyber 7: Seven Messages to the Edge of Cyber-Space', 'Threat Taxonomy', 'Threat Landscape', 'ENISA threat landscape - Top 15 Cyber Threats 2015', 'Cyber 7 - Seven messages to the Edge of Cyber-Space', 'ENISA Threat Taxonomy - A tool for structuring threat...', 'ETL 2015 Cyber Threats Poster', 'Threat and Risk Management']",['Threat Intelligence']
+latest-report-on-national-and-international-cyber-security-exercises,['Cyber Exercises'],"['Crisis Management', 'Cyber crisis cooperation']"
+exercise-survey2012,['Cyber Exercises'],['Crisis Management']
+annual-incident-reports-2013,"['Annual Reports', 'For Telcos', 'Incident Reporting']",['Incident Reporting']
+eidas-overview-on-the-implementation-and-uptake-of-trust-services,['Trust Services'],"['Trust service providers', 'Trust Services', 'eIDAS']"
+egov,['Trust Services'],['eID']
+cloud-in-finance,"['Finance', 'Critical Infrastructures and Services']",['Cloud Computing Security']
+copy_of_desktop-reserach-on-public-private-partnerships,"['National Cyber Security Strategies', 'Public Private Partnerships (PPPs)']",['Public Private Partnership']
+flash-note-risks-of-using-discontinued-software,[],['Cyber Security']
+csirt-setting-up-guide-in-greek,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+secure-ict-procurement-in-electronic-communications,"['For Telcos', 'Incident Reporting']",['Cyber Security']
+csirt-setting-up-guide-in-lithuanian,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+handbook-on-security-of-personal-data-processing,['Data Protection'],"['Privacy', 'Personal Data', 'SMEs']"
+security-and-resilience-in-ehealth-infrastructures-and-services,"['Critical Infrastructures and Services', 'Health']","['Resilience', 'Critical Information Infrastructure Protection (CIIP)', 'Health']"
+dbn-severity,"['Data Protection', 'Personal data breaches']",['Privacy']
+COIT_Mitigation_Strategies_Final_Report,"['Threat and Risk Management', 'Threat Landscape']","['Risk Management', 'Mobile Security', 'Cyber Security']"
+good-practice-guide-for-certs-in-the-area-of-industrial-control-systems,"['Industrial Control Systems/SCADA', 'CSIRTs and communities', 'ICS-SCADA']",['CSIRTs']
+cyber-insurance-recent-advances-good-practices-and-challenges,"['National Cyber Security Strategies', 'National Cyber Security Strategies Guidelines & tools']","['Critical Information Infrastructure Protection (CIIP)', 'Cyber Security']"
+security-measures,"['For Telcos', 'Incident Reporting']",['Incident Reporting']
+csirt-setting-up-guide-in-estonian,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+commonality-of-risk-assessment-language-in-cyber-insurance,[],['Cyber Security']
+cyber-security-strategies-paper,"['National Cyber Security Strategies', 'National Cyber Security Strategies Guidelines & tools']",['European Union Institutions']
+business-continuity-for-smes,"['Risk Management', 'Threat and Risk Management']",[]
+smartphone-secure-development-guidelines,[],['Internet of things']
+ep3r-2009-2013,"['National Cyber Security Strategies', 'Public Private Partnerships (PPPs)']",['Public Private Partnership']
+trust-and-reputation-models,"['Online and mobile data protection', 'Data Protection']",['Identity & Trust']
+proactive-detection-of-security-incidents-II-honeypots,"['Proactive Services', 'CSIRT Services', 'Proactive detection of incidents']",['CSIRTs']
+dbn,"['Data Protection', 'Personal data breaches']","['Privacy', 'Identity & Trust', 'Good Practice']"
+good-practice-guide-for-incident-management,['CSIRT Services'],"['CSIRTs', 'Incident Response', 'Incident Reporting', 'Trainings', 'Good Practice']"
+ontology_taxonomies,"['Critical Infrastructures and Services', 'Critical Information Infrastructures']",['Resilience']
+trusted-egov,"['Trust Services', 'Security measures']",['Trust service providers']
+security-guidelines-on-the-appropriate-use-of-qualified-electronic-seals,"['Trust Services', 'Qualified trust services']","['Trust service providers', 'Identity & Trust', 'eID']"
+information-sharing-and-common-taxonomies-between-csirts-and-law-enforcement,"['Law Enforcement', 'CSIRTs and communities']","['CSIRTs', 'Cyber Security']"
+ENISA_Threat_Landscape,"['ENISA Threat Landscape', 'Threat and Risk Management', 'Threat Landscape']","['Threat Intelligence', 'Incident Reporting']"
+csirt-capabilities,"['CSIRTs in Europe', 'CSIRT Capabilities']",['CSIRTs']
+improving-recognition-of-ict-security-standards,"['Standards and certification', 'Standards']",['Standards']
+cloud-computing-sme-survey,"['Risk Management', 'Threat and Risk Management']",[]
+schemes-for-auditing-security-measures,"['For Telcos', 'Incident Reporting']",['Resilience']
+stocktaking-analysis-and-recommendations-on-the-protection-of-ciis,"['Critical Infrastructures and Services', 'CIIP Governance in the EU (Annex)', 'Critical Information Infrastructures']",['Critical Information Infrastructure Protection (CIIP)']
+incentives-and-barriers-to-information-sharing,"['National Cyber Security Strategies', 'Information Sharing and Analysis Centers (ISACs)']",['Cyber Security']
+study-on-csirt-maturity-evaluation-process,"['CSIRTs in Europe', 'CSIRT Capabilities']",['CSIRTs']
+eIDA-in-e-finance-and-e-payment-services,"['Trust Services', 'Security measures']",['Trust service providers']
+strategies-for-incident-response-and-cyber-crisis-cooperation,"['Reactive Services', 'EU-level Cyber Crisis Management', 'CSIRT Services', 'Cyber Crisis Management']","['Exercises', 'CSIRTs']"
+ncss-good-practice-guide,"['National Cyber Security Strategies', 'National Cyber Security Strategies Guidelines & tools']",['National Cyber Security Strategies']
+signalling-security-in-telecom-ss7-diameter-5g,"['Critical Infrastructures and Services', 'Critical Information Infrastructures']",['Critical Information Infrastructure Protection (CIIP)']
+recommendations-on-european-data-protection-certification,"['Standards and certification', 'Data Protection']","['Privacy', 'Data protection']"
+technology-induced-challenges-in-privacy-data-protection-in-europe-spanish-version,"['Risk Management', 'Threat and Risk Management']","['Privacy', 'Identity & Trust', 'Trainings']"
+cyber-security-and-resilience-of-smart-cars,"['IoT and Smart Infrastructures', 'Smart Transport']","['Smart Cars', 'Internet of things']"
+tsp1-framework,"['Trust Services', 'Security measures']",['Trust service providers']
+privacy-considerations-of-online-behavioural-tracking,"['Online and mobile data protection', 'Data Protection']","['Privacy', 'Identity & Trust']"
+smart-grid-threat-landscape-and-good-practice-guide,"['Threat and Risk Management', 'Threat Landscape', 'ENISA Thematic Landscapes']",['Threat Intelligence']
+emergency-communications-stocktaking,"['Critical Infrastructures and Services', 'Critical Information Infrastructures']",['Resilience']
+operational-gaps-overlaps,['CSIRT Services'],['CSIRTs']
+tsp-security,"['Trust Services', 'Guidelines implementing eIDAS']","['Trust service providers', 'Trust Services', 'eID']"
+national-roaming-for-resilience,"['For Telcos', 'Incident Reporting']",['Critical Information Infrastructure Protection (CIIP)']
+electronic-evidence-a-basic-guide-for-first-responders,"['Law Enforcement', 'CSIRTs and communities']",['CSIRTs']
+public-private-partnerships-ppp-cooperative-models,"['National Cyber Security Strategies', 'Public Private Partnerships (PPPs)']",['Public Private Partnership']
+brokerage-model-for-network-and-information-security-in-education,"['Cyber Security Education', 'NIS in Education']",['Network and Information Security Awareness']
+csirt-setting-up-guide-in-spanish,"['CSIRTs in Europe', 'CSIRT Cooperation']",[]
+the-directive-on-attacks-against-information-systems,"['Law Enforcement', 'CSIRTs and communities']",['CSIRTs']
+enisa-threat-landscape-mid-year-2013,"['ENISA Threat Landscape', 'Threat and Risk Management', 'Threat Landscape']",['Threat Intelligence']
+guideline-on-security-measures-for-article-4-and-article-13a,"['For Telcos', 'Incident Reporting']",['Incident Reporting']
+interx-report,"['Understanding the importance of the Internet Infrastructure...', 'Internet Infrastructure', 'Critical Infrastructures and Services']","['Resilience', 'Internet of things']"
+eisas-report-on-implementation-enhanced,['CSIRTs and communities'],"['SMEs', 'CSIRTs', 'Trainings', 'Online Safety', 'Network and Information Security Awareness']"
+the-threat-from-flamer,[],['Critical Information Infrastructure Protection (CIIP)']
+flash-note-heartbleed-a-wake-up-call,[],['Cyber Security']
+national-exercise-good-practice-guide,['Cyber Exercises'],['Cyber Security']
+example-bcp-template,"['Risk Management', 'Threat and Risk Management']",[]
+to-log-or-not-to-log-risks-and-benefits-of-emerging-life-logging-applications,"['Emerging and Future Risks', 'Threat and Risk Management', 'Threat Landscape']","['European Union Institutions', 'Risk Management', 'Identity & Trust', 'Privacy', 'Network and Information Security Awareness']"
+csirt-setting-up-guide-in-danish,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+big-data-protection,"['Privacy by Design', 'Data Protection', 'Cloud and Big Data', 'Big data']","['Privacy', 'Big Data']"
+mobile-payments-security,"['Finance', 'Critical Infrastructures and Services']",['Mobile Security']
+annual-incident-analysis-report-for-the-trust-service-providers,"['For Trust Providers', 'Incident Reporting']",['Incident Reporting']
+tsp-termination,['Trust Services'],"['Trust service providers', 'Trust Services', 'eIDAS']"
+tsp-initiation,"['Trust Services', 'Guidelines implementing eIDAS']","['Trust service providers', 'Trust Services', 'eID']"
+cybersecurity-competitions-2014-the-status-in-europe,"['Cyber Security Education', 'NIS in Education']",['Cyber Security']
+status-report-2012,"['CSIRTs in Europe', 'CSIRT Capabilities']",['CSIRTs']
+Mobile%20IDM,['Trust Services'],['eID']
+security-and-resilience-in-governmental-clouds,"['Cloud and Big Data', 'Emerging and Future Risks', 'Risk Management', 'Cloud Security', 'Threat and Risk Management']",['Cloud Computing Security']
+information-sharing-and-analysis-center-isacs-cooperative-models,"['National Cyber Security Strategies', 'Information Sharing and Analysis Centers (ISACs)']",['Public Private Partnership']
+tsp_standards_2015,"['Standards and certification', 'Standards']",['eID']
+eid-cards-en,['Trust Services'],['eID']
+incident-reporting-for-cloud-computing,"['Cloud Security', 'Cloud and Big Data']","['Incident Reporting', 'Cloud Computing Security']"
+cert-community-recognition-mechanisms-and-schemes,"['CSIRTs in Europe', 'CSIRT Capabilities']",['CSIRTs']
+csirt-setting-up-guide-in-chinese-mandarin,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+an-evaluation-framework-for-cyber-security-strategies,"['National Cyber Security Strategies', 'National Cyber Security Strategies Guidelines & tools']",['Cyber Security']
+ics-scada-dependencies,"['ICS SCADA', 'Critical Infrastructures and Services']","['Critical Information Infrastructure Protection (CIIP)', 'SCADA']"
+eisas-basic-toolset,['CSIRTs and communities'],"['SMEs', 'CSIRTs', 'Trainings', 'Online Safety', 'Network and Information Security Awareness']"
+technical-guideline-for-incident-reporting,"['For Trust Providers', 'Incident Reporting']","['eID', 'Incident Reporting']"
+good-practice-guide-for-addressing-network-and-information-security-aspects-of-cybercrime,"['Law Enforcement', 'CSIRTs and communities']","['Trainings', 'CSIRTs', 'Good Practice']"
+tsp-conformity-assessment,"['Trust Services', 'Guidelines implementing eIDAS']","['Trust service providers', 'Trust Services', 'eID']"
+secure-software-engineering-initiatives,"['Understanding the importance of the Internet Infrastructure...', 'Internet Infrastructure', 'Critical Infrastructures and Services']",[]
+eid-online-banking,['Trust Services'],['eID']
+procure-secure-a-guide-to-monitoring-of-security-service-levels-in-cloud-contracts,"['Cloud Security', 'Cloud and Big Data']",['Cloud Computing Security']
+cloud-computing-risk-assessment,"['Risk Management', 'Threat and Risk Management', 'Cloud Computing Risk Assessment - Spanish']","['Risk Management', 'Cloud Computing Security']"
+cyber-attacks-2013-a-new-edge-for-old-weapons,[],[]
+ce2014-after-action-report,"['Cyber Exercises', 'Cyber Europe']",['Crisis Management']
+standards-and-tools-for-exchange-and-processing-of-actionable-information,"['Reactive Services', 'CSIRT Services']",['CSIRTs']
+the-european-cyber-security-challenge-lessons-learned-report,['Cyber Security Education'],"['ENISA events', 'Cyber Security']"
+secure-communication,['CSIRTs and communities'],['CSIRTs']
+protection-of-underground-infrastructure,"['For Telcos', 'Incident Reporting']","['Resilience', 'Cyber Security']"
+tsp-auditing-framework,[],['eID']
+nis-directive-and-national-csirts,['CSIRTs in Europe'],['CSIRTs']
+certification_survey,[],['Standards']
+eu-level-crisis-man,"['Cyber Crisis Management', 'EU-level Cyber Crisis Management']","['Crisis Management', 'Exercises']"
+cert-cooperation-and-its-further-facilitation-by-relevant-stakeholders,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+csirt-setting-up-guide-in-portugese,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+definition-of-cybersecurity,"['Standards and certification', 'Standards']",['Cyber Security']
+copy_of_report,"['Online and mobile data protection', 'Data Protection']",['Mobile Security']
+privacy-and-security-in-personal-data-clouds,"['Online and mobile data protection', 'Data Protection']",['Privacy']
+roadmap-for-nis-education-programmes-in-europe,"['Cyber Security Education', 'NIS in Education']",['Network and Information Security Awareness']
+annual-incident-reports-2011,"['Annual Reports', 'For Telcos', 'Incident Reporting']",['Incident Reporting']
+guidelines-for-smes-on-the-security-of-personal-data-processing,['Data Protection'],"['Privacy', 'Personal Data', 'SMEs']"
+information-sharing-in-the-energy-sector,"['CSIRTs and communities', 'Energy']","['Critical Information Infrastructure Protection (CIIP)', 'Cyber Security']"
+network-and-information-security-in-the-finance-sector,"['Finance', 'Critical Infrastructures and Services']","['Resilience', 'Cyber Security']"
+cyber-incident-reporting-in-the-eu,"['For Telcos', 'Incident Reporting']",['Incident Reporting']
+cybersecurity-cooperation-defending-the-digital-frontline,[],['Trainings']
+botnets-10-tough-questions,"['Understanding the importance of the Internet Infrastructure...', 'Internet Infrastructure', 'Critical Infrastructures and Services']",[]
+csirt-setting-up-guide-in-latvian,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+recommended-cryptographic-measures-securing-personal-data,"['Security of personal data', 'Cryptographic protocols and tools']",['Cyber Security']
+public-private-partnerships-in-network-and-information-security-education,"['Cyber Security Education', 'NIS in Education']",['Network and Information Security Awareness']
+good-practice-guide-on-cooperatve-models-for-effective-ppps,"['National Cyber Security Strategies', 'Public Private Partnerships (PPPs)']",['Public Private Partnership']
+european-cyber-security-month-2017,"['European Cyber Security Month', 'Cyber Security Education']","['Network and Information Security Awareness', 'Cyber Security']"
+security-resilience-good-practices,"['IoT and Smart Infrastructures', 'Internet of Things (IoT)']","['Resilience', 'Internet of things']"
+using-taxonomies-in-incident-prevention-detection,['CSIRT Services'],['CSIRTs']
+annex-ii,"['ICS SCADA', 'Critical Infrastructures and Services']",['Resilience']
+ccc-study,['Cyber Crisis Management'],"['Cyber crisis procedures', 'Cyber crisis cooperation']"
+copy_of_procent,[],['Cyber Security']
+eisas-enhanced-roadmap-2012,['CSIRT Services'],"['SMEs', 'CSIRTs', 'Trainings', 'Good Practice', 'Network and Information Security Awareness']"
+cybersecurity-information-sharing,['CSIRTs and communities'],['Cyber Security']
+pets-evolution-and-state-of-the-art,"['Data Protection', 'Privacy enhancing technologies']","['Privacy', 'Privacy Tools']"
+annual-privacy-forum-2016,['Data Protection'],['Privacy']
+csirt-setting-up-guide-in-russian,"['CSIRTs in Europe', 'CSIRT Cooperation']",[]
+report-on-annual-privacy-forum-2012,['Data Protection'],"['Privacy', 'European Union Institutions', 'Identity & Trust']"
+annual-incident-reports-2012,"['Annual Reports', 'For Telcos', 'Incident Reporting']",['Incident Reporting']
+annual-incident-reports-2014,"['Annual Reports', 'For Telcos', 'Incident Reporting']",['Incident Reporting']
+communication-network-interdependencies-in-smart-grids,"['Smart Grids', 'Communication network interdependencies in smart grids ...', 'Critical Infrastructures and Services']","['Smart Grids', 'Resilience', 'Critical Information Infrastructure Protection (CIIP)']"
+maturity-levels,"['ICS SCADA', 'Critical Infrastructures and Services']","['Resilience', 'Critical Information Infrastructure Protection (CIIP)']"
+good-practices-for-an-eu-ics-testing-coordination-capability,"['ICS SCADA', 'Critical Infrastructures and Services']",['Critical Information Infrastructure Protection (CIIP)']
+recommendations-on-aligning-research-programme-with-policy,"['Trust Services', 'Standards and certification', 'Cloud and Big Data', 'Threat and Risk Management', 'Data Protection']","['Trust service providers', 'Data protection']"
+survey-pat,"['Online and mobile data protection', 'Data Protection']","['Privacy', 'Identity & Trust']"
+algorithms-key-sizes-and-parameters-report,"['Security of personal data', 'Cryptographic protocols and tools']",['Privacy']
+survey-and-analysis-of-security-parameters-in-cloud-slas-across-the-european-public-sector,"['Cloud Security', 'Cloud and Big Data']",['Cloud Computing Security']
+information-package-for-smes-fr,"['Risk Management', 'Threat and Risk Management']",[]
+smart-cities-architecture-model,"['IoT and Smart Infrastructures', 'Smart Infrastructure']","['Critical Information Infrastructure Protection (CIIP)', 'Internet of things']"
+csirt-setting-up-guide-in-finnish,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+actionable-information-for-security,"['Reactive Services', 'CSIRT Services']",['CSIRTs']
+ecsm-deployment-report,"['European Cyber Security Month', 'Cyber Security Education']",['Network and Information Security Awareness']
+information-packages-for-small-and-medium-sized-enterprises-smes,"['Risk Management', 'Threat and Risk Management']",[]
+protecting-industrial-control-systems.-recommendations-for-europe-and-member-states,"['Protecting Industrial Control Systems. Recommendations for...', 'ICS SCADA', 'Critical Infrastructures and Services']",['Resilience']
+collaborative-solutions-for-network-information-security-in-education,"['Network Information security in education - Infographics', 'Cyber Security Education', 'NIS in Education']","['Digital Skills', 'Training', 'Online Safety', 'Network and Information Security Awareness']"
+iitl,"['ENISA Thematic Landscapes', 'Internet Infrastructure', 'Threat Landscape', 'Poster - Threats Against the Internet Infrastructure', 'Detailed Mind Map for Internet Infrastructure Assets', 'Threat Mind Map', 'Threat and Risk Management', 'Critical Infrastructures and Services']","['Critical Information Infrastructure Protection (CIIP)', 'Threat Intelligence']"
+security-guidelines-on-the-appropriate-use-of-qualified-electronic-time-stamps,"['Trust Services', 'Qualified trust services']","['Trust service providers', 'Identity & Trust', 'eID']"
+involving-intermediaries-in-cyber-security-awareness-raising,"['Cyber Security Education', 'NIS in Education']",['Network and Information Security Awareness']
+annex-vi,"['ICS SCADA', 'Critical Infrastructures and Services']",['Resilience']
+roadmap-to-provide-more-proactive-and-efficient-cert-training,['Trainings for Cyber Security Specialists'],"['Training', 'CSIRTs']"
+sci-2015,[],['Resilience']
+consumerization-of-it-top-risks-and-opportunities,"['Threat and Risk Management', 'Threat Landscape']","['Risk Management', 'Threat Intelligence']"
+implementation-of-article-15,[],['Trust service providers']
+good-practice-guide-on-incident-reporting-1,"['For Telcos', 'Incident Reporting']","['Resilience', 'Incident Reporting']"
+good-practice-guide,"['National Cyber Security Strategies', 'Information Sharing and Analysis Centers (ISACs)']",['Cyber Security']
+power-supply-dependencies,"['For Telcos', 'Incident Reporting']",['Incident Reporting']
+mami,['Trust Services'],['eID']
+data-collection,"['Privacy by Design', 'Data Protection']","['Privacy', 'Identity & Trust']"
+study-on-cryptographic-protocols,"['Security of personal data', 'Cryptographic protocols and tools']",['Privacy']
+enisa-threat-landscape-report-2016,"['ENISA Threat Landscape', 'Threat and Risk Management', 'Threat Landscape']","['Cyber Threats', 'Threat landscape', 'Threat Intelligence']"
+pets-maturity-tool,"['Data Protection', 'Privacy enhancing technologies']",['Data protection']
+bigdata-threat-landscape,"['ENISA Thematic Landscapes', 'Cloud and Big Data', 'Threat Landscape', 'Big data', 'Threat and Risk Management']","['Big Data', 'Threat Intelligence']"
+pets,"['Data Protection', 'Privacy enhancing technologies']",['Privacy']
+status-of-privacy-and-nis-course-curricula-in-eu-member-states,"['Cyber Security Education', 'NIS in Education']","['Privacy', 'Network and Information Security Awareness']"
+csirt-setting-up-guide-in-italian,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+m-a-r-i-e-phase-ii-recommendations-report,"['Critical Infrastructures and Services', 'Critical Information Infrastructures']",['Critical Information Infrastructure Protection (CIIP)']
+awa,"['Reactive Services', 'CSIRT Services']",['CSIRTs']
+nis-in-education,"['Presentations for educational sessions', 'Cyber Security Education', 'NIS in Education']","['Digital Skills', 'Training', 'Online Safety', 'Network and Information Security Awareness']"
+smart-grid-security-certification-in-europe,"['Smart Grids', 'Critical Infrastructures and Services']",['Cyber Security']
+example-assessment-templates,"['Risk Management', 'Threat and Risk Management']",[]
+who-is-who-directory-2011,[],[]
+appstore-security-5-lines-of-defence-against-malware,[],"['Good Practice', 'Internet of things']"
+ce2016-after-action-report,"['Cyber Exercises', 'Cyber Europe']","['Crisis Management', 'Cyber Security']"
+security-incidents-indicators,"['For Telcos', 'Incident Reporting']",['Incident Reporting']
+enisa-threat-landscape-2014,"['ENISA Threat Landscape', 'Threat and Risk Management', 'Threat Landscape']",['Threat Intelligence']
+enisa-threat-landscape-report-2017,"['Threat and Risk Management', 'Threat Landscape']","['Threat landscape', 'Cyber Threats']"
+gpgdnssec,[],"['Resilience', 'Critical Information Infrastructure Protection (CIIP)', 'Good Practice']"
+technology-induced-challenges-in-privacy-data-protection-in-europe-fr,"['Risk Management', 'Threat and Risk Management']","['Privacy', 'Identity & Trust', 'Trainings']"
+privacy-and-data-protection-in-mobile-applications,"['Online and mobile data protection', 'Data Protection']",['Data protection']
+annex-i,"['ICS SCADA', 'Critical Infrastructures and Services']",['Resilience']
+Cyber-Bullying%20and%20Online%20Grooming,"['Risk Management', 'Threat and Risk Management', 'Emerging and Future Risks']","['Internet of things', 'Risk Management', 'Privacy', 'Online Safety', 'Network and Information Security Awareness']"
+risk-management-principles-and-inventories-for-risk-management-risk-assessment-methods-and-tools,"['Risk Management', 'Threat and Risk Management']",[]
+business-and-it-continuity-overview-and-implementation-principles,"['Risk Management', 'Threat and Risk Management']",[]
+metrics-survey,"['Understanding the importance of the Internet Infrastructure...', 'Internet Infrastructure', 'Critical Infrastructures and Services']","['Resilience', 'Managed Services: Metrics', 'Critical Information Infrastructure Protection (CIIP)']"
+flying-2.0-enabling-automated-air-travel-by-identifying-and-addressing-the-challenges-of-iot-rfid-technology-1,"['Threat and Risk Management', 'Threat Landscape']","['Risk Management', 'Identity & Trust', 'Privacy']"
+methodologies-for-the-identification-of-ciis,"['Critical Infrastructures and Services', 'Critical Information Infrastructures']",['Critical Information Infrastructure Protection (CIIP)']
+security-certification-practice-in-the-eu-information-security-management-systems-a-case-study,"['Security of personal data', 'Security measures']",['Privacy']
+cyber-europe-2012-key-findings-report,"['Cyber Exercises', 'Cyber Europe']",['Crisis Management']
+technical-guideline-on-threats-and-assets,"['For Telcos', 'Incident Reporting']",['Incident Reporting']
+vulnerability-disclosure,"['CSIRT Services', 'Quality Management']",['CSIRTs']
+appropriate-security-measures-for-smart-grids,"['Smart Grids', 'Critical Infrastructures and Services']","['Smart Grids', 'Critical Information Infrastructure Protection (CIIP)']"
+report-on-7th-enisa-cert-workshop,[],['CSIRTs']
+cyber-security-aspects-in-the-maritime-sector-1,['Maritime'],['Critical Information Infrastructure Protection (CIIP)']
+csirt-setting-up-guide,"['Setting up guide project plan in MPP', 'Setting up guide project plan in XML', 'CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+security-guidelines-on-the-appropriate-use-of-qualified-electronic-signatures,"['Trust Services', 'Qualified trust services']","['Trust service providers', 'Identity & Trust', 'eID']"
+annual-incident-reports-2015,"['Annual Reports', 'For Telcos', 'Incident Reporting']","['Incident Reporting', 'Cyber Security']"
+tf-masim,"['National Cyber Security Strategies', 'Public Private Partnerships (PPPs)']",['Critical Information Infrastructure Protection (CIIP)']
+indispensable-baseline-security-requirements-for-the-procurement-of-secure-ict-products-and-services,[],"['Standards', 'Procurement', 'Cyber Security']"
+csirt-setting-up-guide-in-dutch,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+article19-incident-reporting-framework,"['For Trust Providers', 'Incident Reporting']",['Incident Reporting']
+nlra-analysis-report,['Cyber Crisis Management'],"['Crisis Management', 'Risk Management']"
+privacy-and-data-protection-by-design,"['Privacy by Design', 'Data Protection']",['Privacy']
+tsp-standards,"['Trust Services', 'Guidelines implementing eIDAS']","['Trust service providers', 'Trust Services', 'eID']"
+overview-of-the-practices-of-ict-certification-laboratories-in-europe,[],['Certification']
+flash-note-the-bash-shellshock-bug,[],['Cyber Security']
+trusted-eid,"['Trust Services', 'Security measures']",['Trust service providers']
+a-security-analysis-of-next-generation-web-standards,"['Understanding the importance of the Internet Infrastructure...', 'Internet Infrastructure', 'Critical Infrastructures and Services']",[]
+introduction-to-return-on-security-investment,"['CSIRTs in Europe', 'CSIRT Capabilities']","['Risk Management', 'CSIRTs']"
+security-framework-for-governmental-clouds,"['Cloud Security', 'Cloud and Big Data']",['Cloud Computing Security']
+annex-iv,"['ICS SCADA', 'Critical Infrastructures and Services']",['Resilience']
+algorithms-key-size-and-parameters-report-2014,"['Security of personal data', 'Cryptographic protocols and tools']",['Privacy']
+m2m-communications-threat-landscape,"['Threat and Risk Management', 'Threat Landscape', 'ENISA Thematic Landscapes']","['Threat landscape', 'Threat Intelligence']"
+csirt-setting-up-guide-in-german,"['CSIRTs in Europe', 'CSIRT Cooperation']",[]
+enisa-threat-landscape-2013-overview-of-current-and-emerging-cyber-threats,"['ENISA Threat Landscape', 'Threat and Risk Management', 'Threat Landscape']",['Threat Intelligence']
+ecsm-results,"['European Cyber Security Month', 'Cyber Security Education']","['Good Practice', 'Network and Information Security Awareness']"
+legal-information-sharing-1,['CSIRTs in Europe'],['CSIRTs']
+gaps-eu-standardisation,['Standards and certification'],['Standards']
+enisa-report-on-resilient-internet-interconnections,"['Understanding the importance of the Internet Infrastructure...', 'Internet Infrastructure', 'Critical Infrastructures and Services']",['Resilience']
+xborderauth,['Trust Services'],['eID']
+csirt-setting-up-guide-in-hindi,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+csirt-setting-up-guide-in-bulgarian,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+cyber-security-culture-in-organisations,['Cyber Security Education'],"['Network and Information Security Awareness', 'Cyber Security']"
+threat-landscape-for-smart-home-and-media-convergence,"['Threat and Risk Management', 'Threat Landscape', 'ENISA Thematic Landscapes']",['Threat Intelligence']
+smartphones-information-security-risks-opportunities-and-recommendations-for-users,"['Data Protection', 'Online and mobile data protection', 'Threat and Risk Management', 'Threat Landscape']","['Privacy', 'Cyber Threats']"
+hardware-threat-landscape,"['Threat and Risk Management', 'Threat Landscape', 'ENISA Thematic Landscapes']","['Threat landscape', 'Threat Intelligence']"
+standards-eidas,"['Standards and certification', 'Standards']","['Trust service providers', 'Standards']"
+map-auth-lev,['Trust Services'],['eID']
+big-data-security,"['Cloud and Big Data', 'Big data']","['Big Data', 'Cloud Computing Security']"
+stock-taking-of-information-security-training-needs-in-critical-sectors,['Trainings for Cyber Security Specialists'],"['Training', 'CSIRTs']"
+csirt-setting-up-guide-in-maltese,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+the-right-to-be-forgotten,"['Online and mobile data protection', 'Data Protection']","['Privacy', 'Identity & Trust']"
+flying-2.0-enabling-automated-air-travel-by-identifying-and-addressing-the-challenges-of-iot-rfid-technology,"['Risk Management', 'Threat and Risk Management', 'Emerging and Future Risks']","['Risk Management', 'Identity & Trust', 'Privacy', 'Internet of things']"
+improving-cooperation-between-csirts-and-law-enforcement,"['Law Enforcement', 'CSIRTs and communities']",['CSIRTs']
+updated-recommendations-2012,"['CSIRTs in Europe', 'CSIRT Capabilities']",['CSIRTs']
+minimum-security-measures-for-digital-service-providers,"['Critical Infrastructures and Services', 'Critical Information Infrastructures']","['Cloud Computing Security', 'Cyber Security']"
+report,"['International Conferences', 'Cyber Crisis Management']",['Cyber crisis cooperation']
+monetising-privacy,"['Online and mobile data protection', 'Data Protection']",['Privacy']
+baseline-security-recommendations-for-iot,"['IoT and Smart Infrastructures', 'Internet of Things (IoT)']",['Internet of things']
+flying-2.0-enabling-automated-air-travel-by-identifying-and-addressing-the-challenges-of-iot-rfid-technology-annex-i,"['Threat and Risk Management', 'Threat Landscape']","['Risk Management', 'Identity & Trust', 'Privacy']"
+tf-tis,"['National Cyber Security Strategies', 'Information Sharing and Analysis Centers (ISACs)']",['Critical Information Infrastructure Protection (CIIP)']
+securing-smart-airports,"['IoT and Smart Infrastructures', 'Smart Transport', 'Critical Infrastructures and Services', 'Critical Information Infrastructures']","['Smart Cities', 'Critical Information Infrastructure Protection (CIIP)', 'Internet of things']"
+tsp2-risk,"['Trust Services', 'Security measures']",['Trust service providers']
+exploring-the-opportunities-and-limitations-of-current-threat-intelligence-platforms,['Threat and Risk Management'],['Cyber Threat Intelligence']
+mutual-aid-agreements,"['Critical Infrastructures and Services', 'Critical Information Infrastructures']",['Critical Information Infrastructure Protection (CIIP)']
+who-is-who-directory-nis-2010,"['Cyber Security Education', 'NIS in Education']",[]
+csirt-setting-up-guide-in-irish,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+technical-guideline-on-incident-reporting,"['For Telcos', 'Incident Reporting']",['Resilience']
+cloud-computing-information-assurance-framework,"['Risk Management', 'Threat and Risk Management']",[]
+eisas-large-scale-pilot,['CSIRT Services'],"['Good Practice', 'SMEs', 'CSIRTs', 'Online Safety']"
+exploring-cloud-incidents,"['Cloud Security', 'Cloud and Big Data']",['Cloud Computing Security']
+information-package-for-smes-el,"['Risk Management', 'Threat and Risk Management']",[]
+security-aspects-of-virtualization,"['Threat and Risk Management', 'Cloud and Big Data']",['Cyber Security']
+blockchain-security,"['Finance', 'Critical Infrastructures and Services']","['Finance', 'Critical Information Infrastructure Protection (CIIP)']"
+art4_tech,"['Data Protection', 'Personal data breaches']",['Privacy']
+scalable-and-accepted-methods-for-trust-building,[],['CSIRTs']
+eisas-deployment-feasibility-study,['CSIRTs and communities'],"['CSIRTs', 'Network and Information Security Awareness']"
+smartphone-secure-development-guidelines-2016,[],"['Mobile Security', 'Mobile Applications', 'Internet of things']"
+ce2010report,"['Cyber Exercises', 'Cyber Europe']",['Crisis Management']
+critical-cloud-computing,"['Cloud Security', 'Cloud and Big Data']","['Critical Information Infrastructure Protection (CIIP)', 'Cloud Computing Security']"
+ecsm2016-deployment-report,"['European Cyber Security Month', 'Cyber Security Education']",['Cyber Security']
+qualified-website-authentication-certificates,"['Trust Services', 'Qualified trust services']",['Trust service providers']
+ENISA-smart-grid-security-recommendations,"['Security Aspects of Smart Grid', 'Smart Grids', 'Smart grid Security Related Initiatives', 'Smart Grid Security Related Standards Guidelines and...', 'Survey and Interview Analysis', 'ICT Inderdependencies of the smart grid', 'Critical Infrastructures and Services']","['Smart Grids', 'Critical Information Infrastructure Protection (CIIP)', 'Good Practice']"
+baseline-capabilities-for-national-governmental-certs,"['CSIRTs in Europe', 'CSIRT Capabilities']",['CSIRTs']
+csirt-setting-up-guide-in-swedish,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+security-guidelines-on-the-appropriate-use-of-qualified-website-authentication-certificates,"['Trust Services', 'Qualified trust services']","['Trust service providers', 'Identity & Trust', 'eID']"
+proposal-for-one-security-framework-for-articles-4-and-13a,"['For Telcos', 'Incident Reporting']",['Incident Reporting']
+cooperation-between-certs-and-law-enforcement-agencies-in-the-fight-against-cybercrime-a-first-collection-of-practices,"['Law Enforcement', 'CSIRTs and communities']","['Trainings', 'CSIRTs', 'Good Practice']"
+baseline-capabilities-of-national-governmental-certs-summary,[],['CSIRTs']
+copy_of_cookies,"['Online and mobile data protection', 'Data Protection']",['Data protection']
+certification-of-cyber-security-skills-of-ics-scada-professionals,"['ICS SCADA', 'Critical Infrastructures and Services']",['Critical Information Infrastructure Protection (CIIP)']
+eisas_roadmap,['CSIRTs and communities'],['CSIRTs']
+impact-evaluation-article13a,"['For Telcos', 'Incident Reporting']",['Incident Reporting']
+information-package-for-smes-1,"['Risk Management', 'Threat and Risk Management']",[]
+emerging-and-future-risks-framework-introductory-manual,"['Risk Management', 'Threat and Risk Management', 'Emerging and Future Risks']",['Risk Management']
+standardisation-for-smes,"['Standards and certification', 'Standards']",['Privacy']
+study-on-csirt-maturity,"['CSIRTs in Europe', 'CSIRT Capabilities']",['CSIRTs']
+example-asset-identification-cards,"['Risk Management', 'Threat and Risk Management']",[]
+cloud-security-guide-for-smes,"['Cloud Security', 'Cloud and Big Data']","['SMEs', 'Cloud Computing Security']"
+privacy-tools-for-the-general-public,"['Data Protection', 'Privacy enhancing technologies']",['Privacy']
+password-security-a-joint-effort-between-end-users-and-service-providers,[],['Privacy']
+information-package-for-smes-es,"['Risk Management', 'Threat and Risk Management']",[]
+the-use-of-cryptographic-techniques-in-europe,"['Security of personal data', 'Cryptographic protocols and tools']",['Identity & Trust']
+csirt-setting-up-guide-in-czech,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+annex-iii,"['ICS SCADA', 'Critical Infrastructures and Services']",['Resilience']
+supporting-the-cert-community-impact-analysis-and-roadmap,['CSIRTs in Europe'],['CSIRTs']
+csirt-setting-up-guide-in-french,"['CSIRTs in Europe', 'CSIRT Cooperation']",[]
+challenges-of-security-certification-in-emerging-ict-environments,['Standards and certification'],['Cyber Security']
+window-of-exposure-a-real-problem-for-scada-systems,"['ICS SCADA', 'Critical Infrastructures and Services']",['Critical Information Infrastructure Protection (CIIP)']
+can-we-learn-from-scada-security-incidents,"['ICS SCADA', 'Critical Infrastructures and Services']",['Critical Information Infrastructure Protection (CIIP)']
+large-scale-udp-attacks-the-2014-trend-and-how-to-face-it,[],['Cyber Security']
+technical-guideline-on-minimum-security-measures,"['For Telcos', 'Incident Reporting']",['Resilience']
+policy-industry-research,"['Standards and certification', 'Standards']",['Privacy']
+cyber-hygiene,['Cyber Security Education'],['Cyber Security']
+policy-statement,"['Understanding the importance of the Internet Infrastructure...', 'Internet Infrastructure', 'Critical Infrastructures and Services']",[]
+security-guidelines-on-the-appropriate-use-of-qualified-electronic-registered-delivery-services,"['Trust Services', 'Qualified trust services']","['Trust service providers', 'Identity & Trust', 'eID']"
+baseline-capabilities-of-national-governmental-certs-policy-recommendations,"['CSIRTs in Europe', 'CSIRT Capabilities']",['CSIRTs']
+leading-the-way-enisa-s-impact-in-operational-security,['CSIRTs in Europe'],['CSIRTs']
+flash-note-can-recent-attacks-really-threaten-internet-availability,[],[]
+good-practice-guide-for-securely-deploying-governmental-clouds,"['Cloud Security', 'Cloud and Big Data']",['Cloud Computing Security']
+a-collection-of-good-practice-for-cert-quality-assurance,"['CSIRTs in Europe', 'CSIRT Cooperation']",[]
+sdn-threat-landscape,"['Threat and Risk Management', 'Threat Landscape', 'ENISA Thematic Landscapes']",['Threat Intelligence']
+the-cost-of-incidents-affecting-ciis,"['Critical Infrastructures and Services', 'Critical Information Infrastructures']","['Resilience', 'Critical Information Infrastructure Protection (CIIP)']"
+security-guide-for-ict-procurement,"['For Telcos', 'Incident Reporting']",['Cyber Security']
+reference-incident-classification-taxonomy,"['Law Enforcement', 'CSIRTs and communities', 'CSIRT Services', 'Community Projects']",['CSIRTs']
+on-the-security-privacy-and-usability-of-online-seals,"['Online and mobile data protection', 'Data Protection']",['Identity & Trust']
+good-practices-recommendations,"['IoT and Smart Infrastructures', 'Smart Transport']","['Critical Information Infrastructure Protection (CIIP)', 'Internet of things']"
+annex-v,"['ICS SCADA', 'Critical Infrastructures and Services']",['Resilience']
+csirt-setting-up-guide-in-slovenian,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+tsp3-incidents,"['Trust Services', 'Security measures']",['Trust service providers']
+tsp-supervision,"['Trust Services', 'Guidelines implementing eIDAS']","['Trust service providers', 'Trust Services', 'eID']"
+survey-analysis,['CSIRT Services'],['CSIRTs']
+res-tech,[],['Resilience']
+csirt-setting-up-guide-in-polish,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+information-package-for-smes,"['Risk Management', 'Threat and Risk Management']",[]
+tools-and-methodologies-to-support-cooperation-between-csirts-and-law-enforcement,"['Law Enforcement', 'CSIRTs and communities']",['CSIRTs']
+pets-controls-matrix-a-systematic-approach-for-assessing-online-and-mobile-privacy-tools,"['Data Protection', 'Privacy enhancing technologies']","['Privacy', 'Privacy Tools']"
+annual-incident-reports-2016,"['For Telcos', 'Incident Reporting']",['Incident Reporting']
+cyber-security-and-resilience-for-smart-hospitals,"['IoT and Smart Infrastructures', 'Smart Infrastructure', 'Critical Infrastructures and Services', 'Health']","['Internet of things', 'Health']"
+behavioural-biometrics,"['Risk Management', 'Threat and Risk Management']",[]
+ecsm-roadmap,"['European Cyber Security Month', 'European Cyber Security Month overview', 'ECSM countries profiles', 'Cyber Security Education', 'European Cyber Security Month Roadmap']",['Network and Information Security Awareness']
+incident-notification-for-dsps-in-the-context-of-the-nis-directive,"['Incident Reporting', 'For Digital Service Providers (NIS Directive)']",['Incident Reporting']
+europeansecuritymonth,"['European Cyber Security Month', 'Cyber Security Education']","['Good Practice', 'Network and Information Security Awareness']"
+end-to-end-resilience,[],['Resilience']
+ecsm15-deployment-report,"['European Cyber Security Month', 'Cyber Security Education', 'ECSM 2016 Planning']",['Network and Information Security Awareness']
+csirt-setting-up-guide-in-romanian,"['CSIRTs in Europe', 'CSIRT Cooperation']",['CSIRTs']
+eu-cyber-cooperation-the-digital-frontline,[],['Cyber Security']
+metrics-tech-report,"['Understanding the importance of the Internet Infrastructure...', 'Internet Infrastructure', 'Critical Infrastructures and Services']","['Resilience', 'Managed Services: Metrics', 'Critical Information Infrastructure Protection (CIIP)']"
+pat-study,"['Online and mobile data protection', 'Data Protection']","['Privacy', 'Identity & Trust']"
+detect-share-protect-solutions-for-improving-threat-data-exchange-among-certs,[],['CSIRTs']
+inventory-of-risk-assessment-and-risk-management-methods,"['Risk Management', 'Threat and Risk Management']",[]
+technology-induced-challenges-in-privacy-data-protection-in-europe-german-version,"['Risk Management', 'Threat and Risk Management']","['Privacy', 'Identity & Trust', 'Trainings']"

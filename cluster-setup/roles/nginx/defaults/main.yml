@@ -1,0 +1,22 @@
+nginx_etc_dir: /etc/nginx
+nginx_kibana_proxy_conf_file: "{{ nginx_etc_dir }}/conf.d/kibana.conf"
+nginx_jenkins_proxy_conf_file: "{{ nginx_etc_dir }}/conf.d/jenkins.conf"
+nginx_elastic_proxy_conf_file: "{{ nginx_etc_dir }}/conf.d/elastic.conf"
+nginx_passwd_file: "{{ nginx_etc_dir}}/htpasswd.users"
+nginx_server_key_file: "{{ nginx_etc_dir }}/server.key"
+nginx_server_crt_file: "{{ nginx_etc_dir }}/server.crt"
+
+kibana_server_name: kibana.opencsam.enisa.europa.eu
+kibana_listen_host: "{{ hostvars['kibana01'].ip }}"
+kibana_listen_port: 5601
+
+jenkins_server_name: jenkins.opencsam.enisa.europa.eu
+jenkins_listen_host: "{{ hostvars['jenkins01'].ip }}"
+jenkins_listen_port: 8080
+
+elastic_server_name: elastic.opencsam.enisa.europa.eu
+elastic_listen_host:
+  - "{{ hostvars['elastic01'].ip }}"
+  - "{{ hostvars['elastic02'].ip }}"
+  - "{{ hostvars['elastic03'].ip }}"
+elastic_listen_port: 9200

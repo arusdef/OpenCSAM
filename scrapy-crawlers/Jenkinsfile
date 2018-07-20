@@ -1,0 +1,64 @@
+properties([
+  buildDiscarder(logRotator(numToKeepStr: '50')),
+  disableConcurrentBuilds(),
+  parameters([
+    string(defaultValue: '172.16.221.85:9200', description: 'Elasticsearch URL', name: 'ES_URL', trim: false),
+    string(defaultValue: 'content', description: 'Elasticsearch Index', name: 'ES_INDEX', trim: false),
+    string(defaultValue: 'article', description: 'Elasticsearch Type', name: 'ES_TYPE', trim: false),
+    text(defaultValue: '''
+web_arstechnica
+web_bankinfosecurity
+web_bleepingcomputer
+web_ciscosecurity
+web_csoonline
+web_euractiv
+web_fireeye
+web_infosecurity
+web_itsecurityguru
+web_nakedsecurity
+web_ncsc
+web_politico
+web_reuters
+web_securelist
+web_secureworks
+web_securityaffairs
+web_securityintelligence
+web_securityweek
+web_techcrunch
+web_thehackernews
+web_threatpost
+web_trendmicro
+web_tripwire
+web_welivesecurity
+web_wired
+    ''', description: '', name: 'WEB_SPIDERS')]),
+  pipelineTriggers([cron('H H(0-6) * * *')])
+])
+
+node {
+  stage("Pull docker image") {
+    sh """docker pull enisa2018/scrapy-crawlers:latest"""
+  }
+
+  params.WEB_SPIDERS.split("\\r?\\n").each { spider ->
+    def spiderName = spider.trim()
+    if (spiderName != '') {
+      stage("Scrape [${spiderName}]") {
+        println "Running spider ${spiderName}"
+        catchError {
+          sh """
+          docker run -i --rm \
+          -e "ES_URL=${params.ES_URL}" \
+          -e "ES_INDEX=${params.ES_INDEX}" \
+          -e "ES_TYPE=${params.ES_TYPE}" \
+          enisa2018/scrapy-crawlers:latest ${spiderName} \
+          -s "LOG_LEVEL=WARN" \
+          -s "CLOSESPIDER_PAGECOUNT=500" \
+          -s "ERROR_LIMIT=10"
+          """
+        }
+        println "Scrape result is ${currentBuild.currentResult}"
+      }
+    }
+  }
+}

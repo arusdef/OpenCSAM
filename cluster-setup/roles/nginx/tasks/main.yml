@@ -1,0 +1,76 @@
+---
+
+- name: Enable firewalld
+  service: name=firewalld state=started enabled=yes
+
+- name: Open firewalld https service
+  firewalld:
+    service: https
+    permanent: true
+    state: enabled
+  notify:
+    - reload firewalld
+
+- name: Install EPEL repository
+  package:
+    name:
+      - epel-release
+    state: present
+
+- name: Install Nginx
+  package:
+    name:
+      - nginx
+    state: present
+
+- name: Enable outbound networking for Nginx
+  seboolean:
+    name: httpd_can_network_connect
+    state: yes
+    persistent: yes
+
+- name: Remove default Nginx page
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  register: remove_nginx_default_page
+  notify:
+    - reload nginx
+
+- name: Setup Nginx proxy
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - src: kibana.conf.j2
+      dest: "{{ nginx_kibana_proxy_conf_file }}"
+    - src: jenkins.conf.j2
+      dest: "{{ nginx_jenkins_proxy_conf_file }}"
+    - src: elastic.conf.j2
+      dest: "{{ nginx_elastic_proxy_conf_file }}"
+  notify:
+    - reload nginx
+
+- name: Copy server key
+  copy:
+    content: "{{ server_key }}"
+    dest: "{{ nginx_server_key_file }}"
+  notify:
+    - reload nginx
+
+- name: Copy server cert
+  copy:
+    content: "{{ server_crt }}"
+    dest: "{{ nginx_server_crt_file }}"
+  notify:
+    - reload nginx
+
+- name: Create users
+  template:
+    src: templates/htpasswd.users.j2
+    dest: "{{ nginx_passwd_file }}"
+  notify:
+    - reload nginx
+
+- name: Ensure nginx is started and enabled to start at boot
+  service: name=nginx state=started enabled=yes

@@ -1,0 +1,5 @@
+dependencies:
+  - { role: common }
+  # - { role: external_storage }
+  - { role: java }
+  - { role: docker }

@@ -1,0 +1,174 @@
+{
+    "_source": [
+        "title",
+        "content",
+        "resource_label"
+    ],
+    "query": {
+        "function_score": {
+            "boost": "5",
+            "functions": [{
+                    "filter": {
+                        "match": {
+                            "resource_label": "arstechnica"
+                        }
+                    },
+                    "weight": 1.6
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "bankinfosecurity"
+                        }
+                    },
+                    "weight": 1.2
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "bleepingcomputer"
+                        }
+                    },
+                    "weight": 1
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "csoonline"
+                        }
+                    },
+                    "weight": 1.4
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "darkreading"
+                        }
+                    },
+                    "weight": 1.4
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "euractiv"
+                        }
+                    },
+                    "weight": 1.4
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "itsecurityguru"
+                        }
+                    },
+                    "weight": 0.8
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "malwarebytes"
+                        }
+                    },
+                    "weight": 1.6
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "nakedsecurity"
+                        }
+                    },
+                    "weight": 1
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "politico"
+                        }
+                    },
+                    "weight": 1.2
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "reuters"
+                        }
+                    },
+                    "weight": 1.4
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "securelist"
+                        }
+                    },
+                    "weight": 1.4
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "securityaffairs"
+                        }
+                    },
+                    "weight": 0.8
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "securityintelligence"
+                        }
+                    },
+                    "weight": 1.4
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "securityweek"
+                        }
+                    },
+                    "weight": 1.4
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "techcrunch"
+                        }
+                    },
+                    "weight": 1.2
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "thehackernews"
+                        }
+                    },
+                    "weight": 1
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "threatpost"
+                        }
+                    },
+                    "weight": 1.6
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "trendmicro"
+                        }
+                    },
+                    "weight": 1.4
+                },
+                {
+                    "filter": {
+                        "match": {
+                            "resource_label": "wired"
+                        }
+                    },
+                    "weight": 1.2
+                }
+            ],
+            "boost_mode": "multiply"
+        }
+    }
+}
