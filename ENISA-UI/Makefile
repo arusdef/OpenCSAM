@@ -17,4 +17,7 @@ push.latest:
 build:
 	docker build -t $(NAME) .
 
+run:
+	docker run -it --rm --name $(NAME) -p 4200:4200 $(NAME)
+
 .PHONY: build push push.tag push.latest

@@ -1,0 +1,17 @@
+properties([
+  buildDiscarder(logRotator(numToKeepStr: '50')),
+  disableConcurrentBuilds()
+])
+
+node {
+  stage('Build docker image') {
+    dir ('ENISA-UI') { 
+      sh """make build"""
+    }
+  }
+  stage("Run docker image") {
+    dir ('ENISA-UI') { 
+      sh """make run"""
+    }
+  }
+}
