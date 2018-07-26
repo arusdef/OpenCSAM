@@ -1,0 +1,7 @@
+Makefile
+Jenkinsfile
+node_modules
+package-lock.json
+yarn.lock
+.git
+*.md

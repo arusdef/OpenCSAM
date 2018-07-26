@@ -1,0 +1,25 @@
+<div layout="row" layout-align="start stretch"class="pad-top-sm" >
+    <div flex="35" style="height:100%">
+      <div  layout="row" layout-fill >
+        <mat-form-field layout-fill layout-align="start stretch">
+          <mat-label>Notes</mat-label>
+          <textarea matInput flex [(ngModel)]="notes.note"  layout-align="start stretch"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <div flex="65">
+      <mat-tab-group>
+        <mat-tab *ngFor="let article of result.selected" label="Article"> 
+          <div layout="column" layout-align="start start" class="pad-top-md">
+            <h4 class="push-bottom-xs">{{article._source.title}}</h4>
+            <p class="push-top-xs">{{article._source.content}}</p>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+  <div layout="row" layout-align="start start" class="pad-top-xxl" >
+    <div flex>
+      <button  mat-raised-button color="primary" (click)="saveNotesAsFile()">Save Notes</button>
+    </div>
+  </div>

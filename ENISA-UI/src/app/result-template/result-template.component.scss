@@ -1,0 +1,7 @@
+td-data-table ::ng-deep thead{
+    display: none;
+}
+:host /deep/ 
+ td-data-table-row{
+    border-bottom-color: #fafafa !important;
+}
