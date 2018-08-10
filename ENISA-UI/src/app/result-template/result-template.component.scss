@@ -1,7 +1,14 @@
 td-data-table ::ng-deep thead{
     display: none;
 }
-:host /deep/ 
- td-data-table-row{
-    border-bottom-color: #fafafa !important;
+:host /deep/ {
+
+  td-data-table-row{
+      border-bottom-color: #fafafa !important;
+  }
+
+  td-data-table.dataTableResuts > div.td-data-table-scrollable {
+    overflow: unset !important;
+  }
+
 }

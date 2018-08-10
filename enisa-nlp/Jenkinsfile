@@ -9,15 +9,22 @@ properties([
 ])
 
 node {
-  stage("Pull docker image") {
-    sh """docker pull enisa2018/enisa-nlp:latest"""
+  checkout scm
+
+  stage('Build docker image') {
+    dir('enisa-nlp') {
+      sh """docker build -t enisa-nlp ."""
+    }
   }
+
   stage("Topics Modelling") {
-    sh """
-    docker run -i --rm \
-    -e "ES_URL=${params.ES_URL}" \
-    -e "ES_PORT=${params.ES_PORT}" \
-    enisa2018/enisa-nlp:latest
-    """
+    dir('enisa-nlp') {
+      sh """
+      docker run -i --rm \
+      -e "ES_URL=${params.ES_URL}" \
+      -e "ES_PORT=${params.ES_PORT}" \
+      enisa-nlp
+      """
+    }
   }
 }

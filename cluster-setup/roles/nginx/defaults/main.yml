@@ -1,7 +1,10 @@
 nginx_etc_dir: /etc/nginx
+
+nginx_webapp_proxy_conf_file: "{{ nginx_etc_dir }}/conf.d/webapp.conf"
 nginx_kibana_proxy_conf_file: "{{ nginx_etc_dir }}/conf.d/kibana.conf"
 nginx_jenkins_proxy_conf_file: "{{ nginx_etc_dir }}/conf.d/jenkins.conf"
 nginx_elastic_proxy_conf_file: "{{ nginx_etc_dir }}/conf.d/elastic.conf"
+
 nginx_passwd_file: "{{ nginx_etc_dir}}/htpasswd.users"
 nginx_server_key_file: "{{ nginx_etc_dir }}/server.key"
 nginx_server_crt_file: "{{ nginx_etc_dir }}/server.crt"
@@ -20,3 +23,7 @@ elastic_listen_host:
   - "{{ hostvars['elastic02'].ip }}"
   - "{{ hostvars['elastic03'].ip }}"
 elastic_listen_port: 9200
+
+webapp_server_name: webapp.opencsam.enisa.europa.eu
+webapp_listen_host: "{{ hostvars['webapp01'].ip }}"
+webapp_listen_port: 4200

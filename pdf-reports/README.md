@@ -28,6 +28,8 @@ Run the script `./tags.py` from the command line. It will create a file called `
 
 Parses PDF documents and extract data and metadata in a plain text format. The parsing is done using the Tika parser [tika-python](https://github.com/chrismattmann/tika-python).
 
+Although no Word documents were ingested during the prototype phase, parsing these follows a similar process as outlined [here](https://tika.apache.org/0.5/formats.html). 
+
 Run the script `./plaintext.py` from the command line. It will create a `plaintext` folder and save the parsed text from the PDF documents into it.
 
 ***

@@ -1,11 +1,12 @@
 import { Globals } from '../app/globals';
-import { NgModule, Type } from '@angular/core';
+import { NgModule, Type,APP_INITIALIZER } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CovalentPagingModule } from '@covalent/core/paging';
 import { BrowserModule, Title }  from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentSearchModule } from '@covalent/core/search';
@@ -21,6 +22,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { CovalentCommonModule } from '@covalent/core/common';
 import { CovalentLayoutModule } from '@covalent/core/layout';
 import { CovalentDataTableModule } from '../../node_modules/@covalent/core/data-table';
+import {MatSelectModule} from '@angular/material/select';
 
 import { CovalentMediaModule } from '@covalent/core/media';
 import { CovalentLoadingModule } from '@covalent/core/loading';
@@ -36,16 +38,15 @@ import { AppComponent } from './app.component';
 import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 import { MOCK_API } from '../config/api.config';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
 import {SearchService} from '../services/search.service';
 import { ArticleSearchComponent } from './article-search/article-search.component';
-import { SearchControlComponent } from './search-control/search-control.component';
 import { SearchHomeComponent } from './search-home/search-home.component';
-import { CriteriaComponent } from './criteria/criteria.component';
 import { EnisaFooterComponent } from './enisa-footer/enisa-footer.component';
 import { ResultTemplateComponent } from './result-template/result-template.component';
 import { TopicComponent } from './topic/topic.component';
 import { ReportEditorComponent } from './report-editor/report-editor.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { AppConfigService } from '../services/load-config.service';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -54,14 +55,15 @@ const httpInterceptorProviders: Type<any>[] = [
 export function getAPI(): string {
   return MOCK_API;
 }
+export function appConfigServiceFactory(provider: AppConfigService) {
+  return () => provider.getAPI();
+}
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleSearchComponent,
-    SearchControlComponent,
     SearchHomeComponent,
-    CriteriaComponent,
     EnisaFooterComponent,
     ResultTemplateComponent,
     TopicComponent,
@@ -86,9 +88,11 @@ export function getAPI(): string {
     MatListModule,
     MatCheckboxModule,
     MatDividerModule,
+    MatSnackBarModule,
     MatInputModule,
     MatTabsModule,
     MatToolbarModule,
+    MatSelectModule,
     // covalent modules
     CovalentCommonModule,
     CovalentLayoutModule,
@@ -97,6 +101,7 @@ export function getAPI(): string {
     CovalentDataTableModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
+    CovalentPagingModule,
     CovalentHttpModule.forRoot({
       interceptors: [{
         interceptor: RequestInterceptor, paths: ['**'],
@@ -106,9 +111,12 @@ export function getAPI(): string {
     NgxChartsModule,
     // routes
     appRoutes,
-  ], // modules needed to run this module
+  ], // modules needed to run this modules
   providers: [  Globals,
-    httpInterceptorProviders,SearchService
+    httpInterceptorProviders,SearchService,
+    AppConfigService,
+    { provide: APP_INITIALIZER, useFactory: appConfigServiceFactory, deps: [AppConfigService], multi: true },
+    // {provide: LocationStrategy, useClass: HashLocationStrategy}, 
   ], // additional providers needed for this module
   entryComponents: [ ],
   bootstrap: [ AppComponent ],

@@ -4,14 +4,29 @@ properties([
 ])
 
 node {
+  checkout scm
+
   stage('Build docker image') {
-    dir ('ENISA-UI') { 
-      sh """make build"""
+    dir ('ENISA-UI') {
+      sh """docker build -t webapp ."""
     }
   }
-  stage("Run docker image") {
-    dir ('ENISA-UI') { 
-      sh """make run"""
+
+  stage("Stop docker container") {
+    dir ('ENISA-UI') {
+        sh """docker kill webapp || true"""
+    }
+  }
+
+  stage("Run docker container") {
+    dir ('ENISA-UI') {
+        sh """docker run -d --rm --name webapp -p 4200:4200 webapp"""
+    }
+  }
+
+  stage("Verify docker container") {
+    dir ('ENISA-UI') {
+        sh """docker ps | grep webapp"""
     }
   }
 }

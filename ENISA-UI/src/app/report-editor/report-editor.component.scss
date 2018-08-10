@@ -1,3 +1,15 @@
-textarea {
-height : 50vh !important
-} 
+:host /deep/ {
+
+  div.notesArticle {
+
+    height: 56vh;
+    overflow: scroll-y;
+
+  }
+
+  textarea.notesEditor {
+    height : 59vh !important;
+    resize: none;
+  }
+
+}

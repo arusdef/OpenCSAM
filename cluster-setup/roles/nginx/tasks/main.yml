@@ -42,6 +42,8 @@
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items:
+    - src: webapp.conf.j2
+      dest: "{{ nginx_webapp_proxy_conf_file }}"
     - src: kibana.conf.j2
       dest: "{{ nginx_kibana_proxy_conf_file }}"
     - src: jenkins.conf.j2

@@ -1,3 +1,4 @@
+import { Globals } from './../globals';
 import { ResponseTemplate } from './../model/responseTemplate.model';
 import { Component, OnInit, OnDestroy,Input,Output,EventEmitter   } from '@angular/core';
 import {Criteria} from './../model/criteria.model';
@@ -13,15 +14,14 @@ export class TopicComponent implements OnInit,OnDestroy {
   constructor() { console.log("Topic Component Creates"); }
   data: any[] = [];
   ngOnInit() {
-
+    console.log("Topic Component Creates");
+  
   }
   ngOnDestroy(){
 
   }
-  // onToggleChange(newvalue:string){
-  //   this.criteriaChange.emit(this.result.criteria);
-  // }
-
+ 
+  
   search(newvalue:string){
     this.criteriaChange.emit(this.result.criteria);
   }

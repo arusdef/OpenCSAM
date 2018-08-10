@@ -9,7 +9,7 @@ export interface IResponseTemplate{
     hits?:Hits;
     topic?:string;
     rpt?:string;
-   criteria?:Criteria;
+    criteria?:Criteria;
     isInitialized:Boolean; // Check for the first time
     selected:HitsObjs[]; // User selections from the articlesearch view
     query:string; // Search query term
@@ -19,7 +19,7 @@ export class ResponseTemplate implements IResponseTemplate {
     took?: string;
     timed_out?: string;
     _shards?: Shards;
-    hits?:Hits;
+    hits?:Hits= null;
     topic?:string;
     rpt?:string;
     criteria?:Criteria = new Criteria();

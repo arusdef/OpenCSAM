@@ -1,0 +1,5 @@
+{
+     "ELASTIC_SEARCH_CONTENT_INDEX" : "https://elastic.opencsam.enisa.europa.eu/content/_search",
+     "USER_NAME" : "guest",
+     "PASSWORD" : "teradata"
+}

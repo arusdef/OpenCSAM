@@ -1,0 +1,52 @@
+:host ::ng-deep
+.mat-checkbox-inner-container
+{
+    height: 13px !important;
+    line-height: 0;
+    margin: auto;
+    margin-right: 8px;
+    order: 0;
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 13px !important;
+    flex-shrink: 0;
+}
+:host ::ng-deep
+ .mat-checkbox-label {
+     font-size: 11px;
+     color: #000000;
+ }
+
+ :host ::ng-deep
+ .mat-checkbox-frame{
+     border-width:1px;
+ }
+ :host ::ng-deep
+ .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
+    border-color : #696969;
+ }
+
+ :host ::ng-deep
+ .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color : rgba(0, 0, 0, 0.10);
+
+ }
+
+ :host ::ng-deep
+ .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb{
+    background-color: #2082c4;
+ }
+
+ :host ::ng-deep
+ .mat-slide-toggle-content{
+     font : 400 12px/20px Roboto, "Helvetica Neue", sans-serif
+ }
+ :host ::ng-deep
+ .mat-slide-toggle-thumb{
+    margin: 4px;
+    height: 12px;
+    width: 14px;
+    border-radius: 50%;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}

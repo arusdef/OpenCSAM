@@ -5,7 +5,7 @@ describe('basic e2e test with loading', function(): void {
   describe('home', function(): void {
     browser.get('/');
     it('should load home page', function(): void {
-      expect(browser.getTitle()).toBe('Covalent Quickstart');
+      expect(browser.getTitle()).toBe('ENISA-UI');
       // Waits for the element 'td-loading' to not be present on the dom.
       browser.wait(EC.not(EC.presenceOf($('td-loading'))), 10000)
       .then(() => {

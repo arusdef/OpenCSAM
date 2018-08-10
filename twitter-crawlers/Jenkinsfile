@@ -1,5 +1,3 @@
-def label = "worker-${UUID.randomUUID().toString()}"
-
 properties([
   buildDiscarder(logRotator(numToKeepStr: '50')),
   disableConcurrentBuilds(),
@@ -13,22 +11,29 @@ properties([
 ])
 
 node {
-  stage("Pull docker image") {
-    sh """docker pull enisa2018/twitter-crawlers:latest"""
+  checkout scm
+
+  stage('Build docker image') {
+    dir ('twitter-crawlers') {
+      sh """docker build -t twitter-crawlers ."""
+    }
   }
+
   stage("Scrape [Twitter]") {
-    sh """
-    docker run -i --rm \
-    -e "ES_URL=${params.ES_URL}" \
-    -e "ES_INDEX=${params.ES_INDEX}" \
-    -e "ES_TYPE=${params.ES_TYPE}" \
-    -e "TW_CONSUMER_KEY=${env.TW_CONSUMER_KEY}" \
-    -e "TW_CONSUMER_SECRET=${env.TW_CONSUMER_SECRET}" \
-    -e "TW_ACCESS_TOKEN_KEY=${env.TW_ACCESS_TOKEN_KEY}" \
-    -e "TW_ACCESS_TOKEN_SECRET=${env.TW_ACCESS_TOKEN_SECRET}" \
-    -e "TW_LIMIT=30" \
-    -e "TW_IDS=${params.TWITTER_ACCOUNTS}" \
-    enisa2018/twitter-crawlers:latest
-    """
+    dir('twitter-crawlers') {
+      sh """
+      docker run -i --rm \
+      -e "ES_URL=${params.ES_URL}" \
+      -e "ES_INDEX=${params.ES_INDEX}" \
+      -e "ES_TYPE=${params.ES_TYPE}" \
+      -e "TW_CONSUMER_KEY=${env.TW_CONSUMER_KEY}" \
+      -e "TW_CONSUMER_SECRET=${env.TW_CONSUMER_SECRET}" \
+      -e "TW_ACCESS_TOKEN_KEY=${env.TW_ACCESS_TOKEN_KEY}" \
+      -e "TW_ACCESS_TOKEN_SECRET=${env.TW_ACCESS_TOKEN_SECRET}" \
+      -e "TW_LIMIT=30" \
+      -e "TW_IDS=${params.TWITTER_ACCOUNTS}" \
+      twitter-crawlers
+      """
+    }
   }
 }

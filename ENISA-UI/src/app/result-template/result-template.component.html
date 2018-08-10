@@ -1,34 +1,45 @@
 <div layout="column" layout-align="center center" flex class="pad-top-sm">
-    <td-data-table
+    <td-data-table class="dataTableResuts"
     *ngIf="result && result.hits && result.hits.hitsObjs"
-    #dataTable
-    [data]="result.hits.hitsObjs"
+    #dataTableResuts
+    [data]="filteredData"
     [columns]="columns"
     [selectable]="true"
     [clickable]="false"
     [multiple]="true"
     [(ngModel)]="result.selected"
-    style="width: 100%;"
+    style="width:100%;"
     >
     <ng-template tdDataTableTemplate="result" let-row="row">
       <div layout="row" style="width:100%;">     
       <div flex-gt-sm="80">
         <div layout="column" layout-fill>
-        <h4 class="push-bottom-xs">{{row._source.title}}</h4>
-        <div layout="row" >
-         <a style="padding-top: 13px" href={{row._source.link}}>Link</a>
-         <p class=" pad-left-sm"> Article Type : {{row._source.resource_type}}</p>
+        <p style="font-size: 18px; font-weight: bold;color:#19498b">{{row._source.title}}</p>
+        <div layout="row" class="pull-top-lg mat-caption" >
+         <a style="padding-top: 12px"  class="tc-green-600" href={{row._source.link}}>Link</a>
+         <p class=" pad-left-sm "> Article Type : {{row._source.resource_type}}</p>
         </div>
-        <p class="pull-top-xs"> {{row._source.published}} - {{(row._source.content.length>500)? (row._source.content | slice:0:500)+'..':(row._source.content) }}</p>
+        <p class="pull-top-sm mat-caption"> <span class="tc-">
+          {{row._source.published}} </span> - {{(row._source.content.length>500)? (row._source.content | slice:0:500)+'..':(row._source.content) }}</p>
       </div>
     </div>
       <div flex-gt-sm="20"  layout="column" layout-align="center center" >
         <!-- <button mat-mini-fab color="primary">{{row._score}}</button> -->
-        <button mat-mini-fab color="primary">15</button>
+        <button mat-mini-fab color="primary" >15</button>
       </div>
       </div>
     </ng-template>
   </td-data-table>
+  <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)" *ngIf="filteredData.length>0">
+      <span hide-xs>Rows per page:</span>
+      <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
+        <mat-option *ngFor="let size of [5,10,20,50]" [value]="size">
+          {{size}}  
+        </mat-option>
+      </mat-select>
+      {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+    </td-paging-bar>
+    
   <div class="md-padding" *ngIf="dataTable && !dataTable.hasData" layout="row" layout-align="center center">
     <h3>No results to display.</h3>
   </div>

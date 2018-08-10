@@ -1,41 +1,41 @@
-
 <div layout="column" layout-fill>
-    <div flex>
-      <div layout-gt-xs="row" layout-align-gt-xs="center center" style="position: fixed;top: 25%;width: 100%;">
-        <div flex-gt-xs="50">
-            <div layout="column" layout-align="center center">
-           <button mat-button class="md-icon-button logo" [disabled]="true">
-                    <img class="logo-image" src="assets//ico/enisa-logo.png">
-                </button>
-                 <div class="tc-blue-900">
-                Cyber Security Search  
-              </div>
-            </div>
-          <mat-card tdMediaToggle="gt-xs">
-          <div layout="column" layout-align="center center" >
-            <div style="width:100%;height:80%">
-                <td-search-box #searchBox placeholder="Search here" [(ngModel)]=" this._global.searchInput" (search)="search($event)" flex class="borders">
-                  </td-search-box>
-            </div>
-              </div>
-          </mat-card>
-        </div> 
-        <div   style="position: fixed;left: 40%; top:60%;width: 100%;">
-        <label> 
-          <mat-icon >date_range</mat-icon>
-          <input [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10"
-                 [selectMode]="'range'" [(ngModel)] ="range" (ngModelChange)="onDateChange($event)" style="width: 240px;">
-          <owl-date-time #dt10></owl-date-time>
-        </label>
+  <div flex>
+    <div layout-gt-xs="row" layout-align-gt-xs="center center" style="position: fixed;top: 25%;width: 100%;">
+      <div flex-gt-xs="50">
+        <div layout="column" layout-align="center center">
+          <button mat-button class="md-icon-button logo" [disabled]="true">
+            <img class="logo-image" src="assets//ico/enisa-logo.png">
+          </button>
+          <div class="tc-blue-900">
+            Cyber Security Search
+          </div>
         </div>
-      </div>     
+        <mat-card tdMediaToggle="gt-xs" style="border: none; box-shadow: none;">
+          <div layout="column" layout-align="center center">
+            <div style="width:100%;height:80%">
+              <td-search-box #searchBox placeholder="Search here" alwaysVisible="true" [(ngModel)]=" this._global.searchInput" (search)="search($event)"
+                flex class="search-borders">
+              </td-search-box>
+            </div>
+            <div style="padding-top: 5px;">
+              <label>
+                <mat-icon>date_range</mat-icon>
+                <input [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10" [selectMode]="'range'" [(ngModel)]="dateRange"
+                 class="date-input">
+                <owl-date-time #dt10></owl-date-time>
+              </label>
+            </div>
+          </div>
+        </mat-card>
+      </div>
     </div>
-    <div layout-gt-xs="row" layout-align-gt-xs="end end" style="position: fixed;bottom: 12px;/* float: right; */right: 0px;">
-   ENISA is an agency of the European Union
-   <button mat-button class="md-icon-button logo pull-top-md" [disabled]="true" style="
+  </div>
+  <div layout-gt-xs="row" layout-align-gt-xs="end end" style="position: fixed;bottom: 12px;/* float: right; */right: 0px;">
+    ENISA is an agency of the European Union
+    <button mat-button class="md-icon-button logo pull-top-md" [disabled]="true" style="
    width: 20px;
-   height: 30px;" >
+   height: 30px;">
       <img src="assets//ico/eu-flag.png" layout-fill>
-  </button>
+    </button>
   </div>
-  </div>
+</div>

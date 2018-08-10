@@ -6,8 +6,11 @@
 
 
 1. [Cluster Setup](10-CLUSTER-SETUP.md)
+1. [Cluster Architecture](15-ARCHITECTURE.md)
 1. [Data Management](30-DATA-MANAGEMENT.md)
 1. [Web Scraping](20-WEB-SCRAPING.md)
+1. [Web Resource](25-WEB-RESOURCES.md)
+1. [Troubleshooting](35-TROUBLESHOOTING.md)
 1. [NLP Research](enisa-nlp/README.md)
 1. [Kibana Dashboards](kibana/README.md)
 1. [Jupyter Notebooks](notebooks/README.md)

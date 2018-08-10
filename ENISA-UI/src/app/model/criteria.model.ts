@@ -7,6 +7,7 @@ export interface ICriteria  {
     tweeter_feed?:Boolean;
     enisa_reports?:Boolean;
     enisa_recomend?:Boolean;
+    date_range?:string;
     keyword?:string;
 }
 
@@ -18,6 +19,7 @@ export class Criteria implements ICriteria {
     tweeter_feed?:Boolean;
     enisa_reports?:Boolean;
     enisa_recomend?:Boolean;
+    date_range?:string;
     keyword?:string;
 
     constructor(params?:ICriteria){
@@ -30,7 +32,7 @@ export class Criteria implements ICriteria {
             this.enisa_reports= params.enisa_reports;
             this.enisa_recomend=params.enisa_recomend;
             this.keyword = params.keyword;
-
+            this.date_range= params.date_range;
         }
     }
 
@@ -40,7 +42,7 @@ export class Criteria implements ICriteria {
         console.log("inside set criteria");
         console.log(json);
 
-        debugger;
+       // debugger;
         
         //empty the array of functions 
         json.query.bool.must[1].function_score.functions = [];
@@ -207,6 +209,22 @@ export class Criteria implements ICriteria {
             json.query.bool.must[0].query_string.default_field ="*.processed";
         }
 
+        console.log(criteria.date_range);
+         if(criteria.date_range== undefined){
+            console.log("Date Range is empty");
+        }
+        else 
+        {
+            console.log("Date Range is not empty");
+            console.log(json.query.bool.must[2].range.published.gte);
+            
+            let dates: string[] = [];
+            dates=criteria.date_range.toString().split(",", 2);
+            let dateFrom = new Date (dates[0]);
+            let dateTo = new Date(dates[1]);
+            json.query.bool.must[2].range.published.gte =dateFrom.getTime();
+            json.query.bool.must[2].range.published.lte =dateTo.getTime();
+        }
        
         console.log( JSON.stringify(json.query.bool.must[1].function_score.functions));
 

@@ -1,0 +1,16 @@
+:host /deep/ {
+
+    .search-borders {
+
+        border: 1px solid #999;
+    }
+
+    .date-input {
+        width: 250px;
+        border: none;
+        border-bottom: 1px solid #999;
+        top: -8px;
+        position: relative;
+        outline: none;
+    }
+}

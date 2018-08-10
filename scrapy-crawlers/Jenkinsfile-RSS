@@ -34,8 +34,12 @@ https://cert.europa.eu/rss?type=category&id=CERT-LatestNews&language=en&duplicat
 ])
 
 node {
-  stage("Pull docker image") {
-    sh """docker pull enisa2018/scrapy-crawlers:latest"""
+  checkout scm
+
+  stage("Build docker image") {
+    dir ('scrapy-crawlers') {
+      sh """docker build -t scrapy-crawlers:rss ."""
+    }
   }
 
   params.RSS_FEEDS.split("\\r?\\n").each { line ->
@@ -53,7 +57,7 @@ node {
           -e "ES_TYPE=${params.ES_TYPE}" \
           -e "RSS_LINK=${rssLink}" \
           -e "RSS_LABEL=${rssLabel}" \
-          enisa2018/scrapy-crawlers:latest rss_crawler \
+          scrapy-crawlers:rss rss_crawler \
           -s "LOG_LEVEL=WARN"
           """
         }
