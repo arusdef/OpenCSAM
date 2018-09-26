@@ -1,42 +1,43 @@
 import { Criteria } from './model/criteria.model';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
+import { ISourcePopularity } from './model/source-popularity';
 
-@Injectable() 
+@Injectable()
 export class Globals {
-    searchInput: string = '';
-    dateRange :string ='';
-    private tabDataStatus = new BehaviorSubject<string>("");
-    contentIndexURL :string ='';
+  private tabDataStatus = new BehaviorSubject<string>("");
+  searchInput: string = '';
+  dateRange: string = '';
+  contentIndexURL: string = '';
   userName: string = '';
   password: string = '';
+  sourcePopularity : ISourcePopularity
 
-    setSearchInput(searchInput:string ){
-      this.searchInput=searchInput;
-    }
-    getSearchInput(){
-        return this.searchInput;
-    }
+  setSearchInput(searchInput: string) {
+    this.searchInput = searchInput;
+  }
+  getSearchInput() {
+    return this.searchInput;
+  }
 
-    setContentIndexURL(contentIndexURL:string ){
-      this.contentIndexURL=contentIndexURL;
-    }
-    getContentIndexURL(){
-        return this.contentIndexURL;
-    }
+  setContentIndexURL(contentIndexURL: string) {
+    this.contentIndexURL = contentIndexURL;
+  }
+  getContentIndexURL() {
+    return this.contentIndexURL;
+  }
 
-    setDateRange(dateRange:string ){
-      this.dateRange=dateRange;
-    }
-    getDateRange(){
-        return this.dateRange;
-    }
+  setDateRange(dateRange: string) {
+    this.dateRange = dateRange;
+  }
+  getDateRange() {
+    return this.dateRange;
+  }
 
-    
-    setTabDataStatus(value: string) {
-      this.tabDataStatus.next(value);
-      }
+  setTabDataStatus(value: string) {
+    this.tabDataStatus.next(value);
+  }
 
   getTabDataStatus(): Observable<string> {
     return this.tabDataStatus.asObservable();
@@ -56,4 +57,12 @@ export class Globals {
   gePassword() {
     return this.password;
   }
+
+  getSourcePopularity() : ISourcePopularity {
+    return this.sourcePopularity
+  }
+  setSourcePopularity(sourcePopularity: ISourcePopularity) {
+    this.sourcePopularity = sourcePopularity
+  }
+
 }

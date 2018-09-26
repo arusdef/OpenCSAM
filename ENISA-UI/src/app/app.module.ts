@@ -1,6 +1,8 @@
 import { Globals } from '../app/globals';
 import { NgModule, Type,APP_INITIALIZER } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatRadioModule} from '@angular/material/radio';
+
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -76,6 +78,7 @@ export function appConfigServiceFactory(provider: AppConfigService) {
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
+    MatRadioModule,
     FormsModule,
     HttpClientModule,
     HttpModule,

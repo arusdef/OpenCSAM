@@ -2,20 +2,17 @@ FROM node:8.11.3-slim
 
 RUN apt-get update && apt-get install -y bzip2 python
 
-RUN npm install -g npm@latest
-RUN npm install -g yarn@latest
-
-RUN npm install -g @angular/cli@latest
-RUN npm install -g protractor@latest
-RUN npm install -g typescript@latest
+RUN npm cache verify
+RUN npm install -g @angular/cli@1.7.3
 
 WORKDIR /opt/webapp
 COPY . /opt/webapp/.
 
-RUN ng update @angular/cli
 RUN npm install
-RUN webdriver-manager update --ignore_ssl && ./scripts/protractor.sh
+
+RUN ng build --prod --build-optimizer
+WORKDIR /opt/webapp/dist
 
 EXPOSE 4200
 
-CMD ng serve ---host 0.0.0.0 --disable-host-check true
+CMD python -m SimpleHTTPServer 4200

@@ -11,8 +11,7 @@ exports.config = {
   ],
   capabilities: {
     'browserName': 'chrome',
-    marionette : true,
-    acceptInsecureCerts : true
+   
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',

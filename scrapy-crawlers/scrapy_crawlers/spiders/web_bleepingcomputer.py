@@ -25,9 +25,9 @@ class BleepingComputerCrawler(AbstractWebCrawler):
 
     links_to_articles_query = 'div.bc_latest_news_text h4 a::attr(href)'
     links_to_pages_query = 'ul.cz-pagination li a::attr(href)'
-    extract_title_query = 'section.bc_main_content h2::text'
+    extract_title_query = 'section.bc_main_content > div > div > div.col-md-8 > div > div.article_section > h1::text'
     extract_datetime_query = None
-    extract_content_query = 'section.bc_main_content div.articleBody p'
+    extract_content_query = 'section.bc_main_content > div > div > div.col-md-8 > div > div.article_section > div.articleBody'
 
     @classmethod
     def extract_datetime(self, response):

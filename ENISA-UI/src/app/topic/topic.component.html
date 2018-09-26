@@ -1,45 +1,26 @@
 <div layout="column" layout-align="start start" class="pad-top-md">
   <div style="width:50%">
     <mat-card>
-      <!-- <app-search-control></app-search-control> -->
-      <td-search-box #searchBox alwaysVisible="true" placeholder="Search here" [(ngModel)]="result.criteria.keyword" (search)="search($event)"
-        flex class="borders">
+      <td-search-box #searchBox alwaysVisible="true" placeholder="Search here" [(ngModel)]="result.criteria.keyword" (search)="search()" flex class="borders">
       </td-search-box>
     </mat-card>
-    <!-- <mat-card><td-search-box #searchBox placeholder="Search here" [(ngModel)]="result.rpt" (search)="search($event)" flex class="borders">
-    </td-search-box></mat-card> -->
-  </div>
-  <div layout="row" layout-align="center center" flex>
-    <mat-slide-toggle [(ngModel)]="result &&  result.criteria &&  result.criteria.k_graph" style="font-size: 48px" >Knowledge Graph</mat-slide-toggle>
-    <mat-slide-toggle [(ngModel)]="result &&  result.criteria &&  result.criteria.time_decay" class="pad-left-md">Time Decay</mat-slide-toggle>
-    <mat-slide-toggle [(ngModel)]="result &&  result.criteria &&  result.criteria.p_resources" class="pad-left-md">Popularity of Sources</mat-slide-toggle>
-    
   </div>
 
   <div layout-align="center center" flex class="pad-top-sm">
-    <table td-data-table>
-      <tr class="mat-subhead-2 tc-grey-600 ">
-        <td flex-gt-sm="50">
-          <mat-checkbox [checked]="result.criteria.news_articles" [disabled]="true">News Article</mat-checkbox>
-        </td>
-        <td flex-gt-sm="50">
-          <mat-checkbox [disabled]="true">Tweeter Feed</mat-checkbox>
-        </td>
-      </tr>
-      <tr class="mat-subhead-2 tc-grey-600 ">
-        <td flex-gt-sm="50">
-          <mat-checkbox [disabled]="true">ENISA Reports</mat-checkbox>
-        </td>
-        <td flex-gt-sm="50">
-          <mat-checkbox [disabled]="true">ENISA Recommendations</mat-checkbox>
-        </td>
-      </tr>
-      <!-- <tr class="mat-subhead-2 tc-grey-600 ">
-        {{result.criteria.date_range |"}}
-      </tr> -->
-    </table>
+    <mat-radio-group class="radio-group" [(ngModel)]="selectedIndex" (change)="updateDataTable($event)">
+      <mat-radio-button class="example-radio-button pad-right-md" *ngFor="let index of indices" [value]="index.name">
+        {{index.label}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div layout="row" layout-align="center center" flex>
+    <mat-slide-toggle [(ngModel)]="result.criteria.k_graph" [disabled]="result.criteria.knowledgeGraphDisabled">Knowledge Graph</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="result.criteria.time_decay" class="pad-left-md" [disabled]="result.criteria.timeDecayDisabled">Time Decay</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="result.criteria.p_resources" class="pad-left-md" [disabled]="result.criteria.popularitySourcesDisabled">Popularity of Sources</mat-slide-toggle>
   </div>
 
   <div layout="column" layout-align="center center" flex class="pad-top-sm" style="width: 100%;">
-    <app-result-template  style="width: 100%;" [result]="result"></app-result-template>
+    <app-result-template style="width: 100%;" [result]="result" (idEvent)="idReceive($event)"></app-result-template>
   </div>
+</div>

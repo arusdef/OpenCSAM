@@ -38,8 +38,12 @@ class ElasticCreatePipeline(object):
     def open_spider(self, spider):
         self.elastic = Elasticsearch(self.es_url)
 
+    def add_feedback_field(self, item):
+        item['feedback'] = 1
+
     def process_item(self, item, spider):
         item_id = get_id(item, self.es_id)
+        self.add_feedback_field(item)
         try:
             res = self.elastic.create(index=self.es_index, doc_type=self.es_type, id=item_id, body=item)
             self.logger.debug(res)
@@ -52,6 +56,7 @@ class ElasticIndexPipeline(object):
 
     logger = logging.getLogger('elasticsearch')
     es_id = 'link'
+    feedback_script = '''{"script":{"source":"if (ctx._source.feedback==null) {ctx._source.feedback=1}","lang":"painless"}}'''
 
     def __init__(self, es_url, es_index, es_type):
         self.es_url = es_url
@@ -71,8 +76,11 @@ class ElasticIndexPipeline(object):
 
     def process_item(self, item, spider):
         item_id = get_id(item, self.es_id)
-        res = self.elastic.index(index=self.es_index, doc_type=self.es_type, id=item_id, body=item)
-        self.logger.debug(res)
+        doc_body = {'doc':item, 'doc_as_upsert':True}
+        update_res = self.elastic.update(index=self.es_index, doc_type=self.es_type, id=item_id, body=doc_body)
+        self.logger.debug(update_res)
+        feedback_res = self.elastic.update(index=self.es_index, doc_type=self.es_type, id=item_id, body=self.feedback_script)
+        self.logger.debug(feedback_res)
         return item
 
 

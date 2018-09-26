@@ -15,6 +15,12 @@ Scripts below will update the system and install required components. Currently,
 
 For security reasons Nginx is acting as a reverse proxy for Jenkins, Kibana and ES.
 
+## Cluster Overview
+
+![Cluster Overview](./10-CLUSTER-OVERVIEW.png)
+![Logical View](./Enisa%20Logical%20Architecture%20-%20prototype.png)
+
+
 ## Prerequisites
 
 Ansible scripts leverage ansible vault to store sensitive variables. To see all values needed to be present in vault check ansible/roles/common/defaults/main.yml for variables starting with vault_. Vault used by this project is committed to repository and can be found in vault/defaults/main.yml - this file is encrypted and ansible requires password for it to be stored in ansible/.vault_password. If new project is started of this one you need to create your own vault (for details see: Ansible Vault). Currently following variables need to be specified in the vault:

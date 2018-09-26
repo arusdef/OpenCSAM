@@ -29,24 +29,23 @@ export class ResponseTemplate implements IResponseTemplate {
 
     constructor(params?: IResponseTemplate) {
         if (params) {
-         
-            this.took=params.took;
-            this.timed_out=params.timed_out;
-            this._shards=new Shards(params._shards);
-            this.topic=params.topic;
-            this.rpt= params.rpt;
-            this.criteria= params.criteria==null? new Criteria():new Criteria(params.criteria);
-            this.hits=  params.hits==null? new Hits():new Hits(params.hits);
+            this.took = params.took;
+            this.timed_out = params.timed_out;
+            this._shards = new Shards(params._shards);
+            this.topic = params.topic;
+            this.rpt = params.rpt;
+            this.criteria = params.criteria == null ? new Criteria() : new Criteria(params.criteria);
+            this.hits = params.hits==null? new Hits():new Hits(params.hits);
             this.isInitialized = params.isInitialized;
             this.selected = params.selected;
             this.query = params.query;
         }
-     
     }
-    setElasticSearchResult(params:any): void {
-        this.took=params.took;
-        this.timed_out=params.timed_out;
-        this._shards=new Shards(params._shards);
-        this.hits=params.hits==null? new Hits():new Hits(params.hits);
+
+    setSearchResult(params:any): void {
+        this.took = params.took;
+        this.timed_out = params.timed_out;
+        this._shards = new Shards(params._shards);
+        this.hits = params.hits == null ? new Hits() : new Hits(params.hits);
     }
 }

@@ -1,4 +1,4 @@
-<div layout="row" layout-align="start stretch"class="pad-top-sm" >
+  <div layout="row" layout-align="start stretch"class="pad-top-sm" >
     <div flex="35" style="height:100%">
       <div layout="row" layout-fill class="pad-right-sm">
         <mat-form-field layout-fill layout-align="start stretch">
@@ -11,8 +11,12 @@
       <mat-tab-group>
         <mat-tab *ngFor="let article of result.selected; let i=index" [label]= "'Article ' + (i+1) ">     
           <div layout="column" layout-align="start start" class="notesArticle pad-top-md">
-            <h4 class="push-bottom-xs">{{article._source.title}}</h4>
-            <p class="push-top-xs">{{article._source.content}}</p>
+            <h4 class="push-bottom-xs" *ngIf= "article._source.title">{{article._source.title}}</h4>
+            <a style="padding-top: 12px" *ngIf="article.showLink()" class="tc-green-600" href={{article.getLink()}}>Link</a> 
+            <p class="push-top-sm"> Article Type : {{article.getType()}}</p>
+            <p class="push-top-xs">Published Date : {{article.getPublishedAt() }}</p>
+            <p class="push-top-xs">{{article.getFullContent()}}</p>
+            
           </div>
         </mat-tab>
       </mat-tab-group>

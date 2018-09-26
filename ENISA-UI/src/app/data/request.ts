@@ -1,7 +1,12 @@
-export const request_json= {
-    "size": 50,
+export const QueryFilter = function() {
+  return {
+    "size":500,
     "sort": [
       {
+        "_score": {
+          "order": "desc"
+        }
+        ,
         "published": {
           "order": "desc",
           "unmapped_type": "boolean"
@@ -10,31 +15,30 @@ export const request_json= {
     ],
     "query": {
       "bool": {
-        "must": [
-          {
-            "query_string": {
-              "query": "",
-              "analyze_wildcard": true,
-              "default_field": "*"
-            }
+        "must": []
+      }
+    },
+    "highlight" : {
+      "pre_tags" : ["<b>"],
+      "post_tags" : ["</b>"],
+      "fields" : {
+          "title.*" : {
+            "fragment_size" : 600, "number_of_fragments" : 1
           },
-          {
-            "function_score": {
-                "functions": [
-              ]
-            }
-        }
-          ,
-          {
-            "range": {
-              "published": {
-                "gte": 1523626875449,
-                "lte": 1531402875449,
-                "format": "epoch_millis"
-              }
-            }
+          "content.*": {
+            "fragment_size" : 600, "number_of_fragments" : 1
+          },
+          "recommendations": {
+            "fragment_size" : 600, "number_of_fragments" : 1
+          },
+          "summary": {
+            "fragment_size" : 600, "number_of_fragments" : 1
+          },
+          "full_text.*": {
+            "fragment_size" : 600, "number_of_fragments" : 1
           }
-        ]
       }
     }
   }
+
+}

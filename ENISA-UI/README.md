@@ -1,15 +1,19 @@
-# Covalent QuickStart
+# ENISA Cyber Security Search Web User Interface
 
-Quickstart App with @covalent packages
+## Running in Development Mode
 
-## Setup
-
-* Ensure you have Node 4.4+ and NPM 3+ installed.
-* Install YARN `npm i -g yarn`
-* Install Angular CLI `yarn global add angular-cli@latest`
-* Install Typescript 2.0 `yarn global add typescript`
-* Install TSLint `yarn global add tslint`
-* Install Protractor for e2e testing `yarn global add protractor`
-* Install Node packages `yarn i`
-* Update Webdriver `webdriver-manager update` and `./node_modules/.bin/webdriver-manager update`
+* Ensure you have Node v8.11.1 and NPM 6.4.0 installed.
+ - Node installation instructions: https://www.npmjs.com/
+* Install angular cli 
+    npm install @angular/cli@1.7.3
+* install required packages 
+    npm install
 * Run local build `ng serve`
+
+## Running in Production Mode
+
+1. Install docker from: https://www.docker.com/ - *Needs to be done only once per machine*
+2. Execute `docker build -t webapp .`
+3. Execute `docker run -d --rm --name webapp -p 4200:4200 webapp`
+4. Access the application in your browser: `http://localhost:4200`
+5. To stop the application: `docker kill webapp`

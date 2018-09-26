@@ -11,11 +11,9 @@ export class AppConfigService{
     constructor(private _http: HttpInterceptorService,
         private _global:Globals, 
         private _snackBarService: MatSnackBar){
-
     }
 
-    getAPI():any{
-
+    getAPI(): any {
         const promise = this._http.get('./../../assets/data.json').map(result => result.json()).toPromise();
         promise.then(appConfig => { 
             this.appData = appConfig;
@@ -25,21 +23,14 @@ export class AppConfigService{
          });
         return promise;
     }
-    private extractData(res: Response) {
 
+    private extractData(res: Response) {
         let body = res.json();
-        // debugger;
-        console.log("Service.getEnisa() Response: ");
-        console.log(body);
-    
         return body || {};
+    }
     
-      }
-    
-      private handleError(error: any): Promise<any> {
-    
-        console.error("Error at Service.GetEnisa(): " + error);
+    private handleError(error: any): Promise<any> {
         this._snackBarService.open("Error while accessing database, error : " + error , "OK");
         return Promise.reject(error.message || error);
-      }
+    }
 }

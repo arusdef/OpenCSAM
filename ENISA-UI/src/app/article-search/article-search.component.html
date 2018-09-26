@@ -1,18 +1,15 @@
-<mat-card tdMediaToggle="gt-xs"  flex>
-    <div flex layout-gt-sm="row">
-      <div flex-gt-sm="10">
-        <button mat-icon-button class="md-icon-button logo" [routerLink]="['/']" style="width: 120px; height: 95px;">
-          <img src="assets//ico/enisa-logo.png" layout-fill>
-        </button>
-      </div>
-      <div flex-gt-sm="80" layout-fill style="width:90%">
-        <ng-template [ngIf]="view == 'search'">
-          <mat-tab-group (selectedTabChange)="tabChanged($event)"  >
-            <mat-tab *ngFor="let topic of response.topics" label="{{topic.topic}}"> 
-              <app-topic  [result]="topic" (criteriaChange)="criteriaChange($event)" ></app-topic>
-              <!-- <div layout="column" >
-                  <button mat-raised-button color="primary">Add to Topic {{topic.topic}}</button>
-                </div> -->
+<mat-card tdMediaToggle="gt-xs" flex>
+  <div flex layout-gt-sm="row">
+    <div flex-gt-sm="10">
+      <button mat-icon-button class="md-icon-button logo" [routerLink]="['/']" style="width: 120px; height: 95px;">
+        <img src="assets//ico/enisa-logo.png" layout-fill>
+      </button>
+    </div>
+    <div flex-gt-sm="80" layout-fill style="width:90%">
+      <ng-template [ngIf]="view == 'search'">
+        <mat-tab-group (selectedTabChange)="tabChanged($event)">
+          <mat-tab *ngFor="let topic of response.topics" label="{{topic.topic}}">
+            <app-topic [result]="topic" (criteriaChange)="criteriaChange($event)" (idChange)="vote($event)"></app-topic>
           </mat-tab>
         </mat-tab-group>
         <div layout="column" layout-align="end end" class="pad-bottom-xl pad-top-sm">

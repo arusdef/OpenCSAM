@@ -56,6 +56,6 @@ class SecurityIntelligenceCrawler(AbstractWebCrawler):
 
     links_to_articles_query = 'article div.row div.content h4 a::attr(href)'
     links_to_pages_query = None
-    extract_title_query = 'div#content div.row div.single article div.single-header h1::text'
+    extract_title_query = '#content > div > div.single.col-lg-12.col-md-12.col-sm-12.col-xs-12 > div > div.post-single.col-lg-6.col-md-6.col-sm-10.col-xs-12 > div > h1::text'
     extract_datetime_query = 'meta[property="article:published_time"]::attr(content)'
     extract_content_query = 'div#content div.row div.single article div.content-wrapper div.body p'
