@@ -13,6 +13,70 @@ Most of the components are run with [systemd](https://www.freedesktop.org/wiki/S
 
 Here, I'll use NGINX as an example, but the same techniques can be applied to other components.
 
+## Change Username or Password
+
+### Pre requirements:
+
+- Open your terminal and go to a empty folder
+- Clone the ENISA project:
+        - `git clone https://github.com/enisaeu/OpenCSAM`
+        - Change to the directory `cd OpenCSAM` and follow the steps in the sections below.
+
+### Change Web Server Username or Password
+
+Make sure that you have `openssl` installed on your machine.
+
+For Mac users it is easy to do with `brew` as
+
+```sh
+brew install openssl
+```
+
+Then encode the password as
+
+```sh
+openssl passwd -apr1
+```
+
+Make sure that you are in the project folder and `cd cluster-setup/`.
+
+As a next step you need to edit the `ansible vault` (you will be asked for a vault password)
+
+```sh
+ansible-vault edit roles/vault/defaults/main.yml
+```
+
+where you should add/modify users credentials in
+
+```text
+vault_proxy_http_auth_users:
+  - { username: "someone", password: "__encoded password__" }
+```
+
+Then just run the ansible playbook to update the nginx configuration (you need ssh password for it)
+
+```sh
+ansible-playbook -i hosts.ini deployment.yml -b -v -k --tags nginx
+```
+
+Commit `ansible vault` to the git to keep track of all changes.
+
+### Change the Webapp Username or Password:
+- Open the file `OpenCSAM/ENISA-UI/app/assets/data.json` in your preffered text editor.
+- Change the username or password in the variables `USER_NAME` or `PASSWORD` respectively to the same values used in the `Change Web Server Username or Password`. **Don't modifiy the value of the `ELASTIC_SEARCH_CONTENT_INDEX` variable. Don't modify any other file within the project.**
+-  Commit your changes in Git, execute each line below in your terminal:
+
+        `git commit -m "Changed username and password"`
+        `git add .` -- is necessary to put the period at the end of this command.
+        `git push`
+
+- After the changes have been pushed to the Github:
+        
+        - Open the link: https://jenkins.opencsam.enisa.europa.eu/job/Enisa%20UI/
+        - Click in `Build Now`
+        - A progress bar will be presented on the right hand side. The build process takes around 4 minutes to complete.
+        - Open the Web App and test the Username or Password change.
+
 ## Failure Playbook
 
 ### SSH to the remote server
