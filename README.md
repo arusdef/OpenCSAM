@@ -15,5 +15,5 @@
 1. [Kibana Dashboards](kibana/README.md)
 1. [Jupyter Notebooks](notebooks/README.md)
 1. [PDF Documents](pdf-reports/README.md)
-1. Front-end (TBD)
+1. [Web Application](docs/28-WEB-APP.md)
 1. [Other Scripts](scripts/README.md)

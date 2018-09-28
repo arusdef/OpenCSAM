@@ -62,20 +62,21 @@ ansible-playbook -i hosts.ini deployment.yml -b -v -k --tags nginx
 Commit `ansible vault` to the git to keep track of all changes.
 
 ### Change the Webapp Username or Password:
+
 - Open the file `OpenCSAM/ENISA-UI/app/assets/data.json` in your preffered text editor.
 - Change the username or password in the variables `USER_NAME` or `PASSWORD` respectively to the same values used in the `Change Web Server Username or Password`. **Don't modifiy the value of the `ELASTIC_SEARCH_CONTENT_INDEX` variable. Don't modify any other file within the project.**
 -  Commit your changes in Git, execute each line below in your terminal:
 
-        `git commit -m "Changed username and password"`
-        `git add .` -- is necessary to put the period at the end of this command.
-        `git push`
+        git add . -- is necessary to put the period at the end of this command.
+        git commit -m "Changed username and password"
+        git push
 
 - After the changes have been pushed to the Github:
         
-        - Open the link: https://jenkins.opencsam.enisa.europa.eu/job/Enisa%20UI/
-        - Click in `Build Now`
-        - A progress bar will be presented on the right hand side. The build process takes around 4 minutes to complete.
-        - Open the Web App and test the Username or Password change.
+        Open the link: https://jenkins.opencsam.enisa.europa.eu/job/Enisa%20UI/
+        Click in `Build Now`
+        A progress bar will be presented on the right hand side. The build process takes around 4 minutes to complete.
+        Open the Web App and test the Username or Password change.
 
 ## Failure Playbook
 
@@ -147,3 +148,23 @@ ls -lA /var/log/nginx/
 ```
 
 So, for the current nginx example there are logs which nginx does not write to `journald` but `/var/log/nginx`. Here you can see all access requests and access errors.
+
+
+### Update Source Popularity Manually
+
+Is recommended to change the source popularity throug the Web Interface using the `thumbs up` or `thumbs down` feature. However if for any reason is still desired to update the popularity of a source manually follow the steps below:
+
+- Go to: https://kibana.opencsam.enisa.europa.eu
+- Click in: 'Dev Tools'
+- Past this on the left side panel:
+```json
+    POST source_popularity/_doc/1/_update
+    {
+      "doc": {
+        "SOURCE_NAME": SOURCE_VALUE
+      },
+      "doc_as_upsert": true
+    }
+```
+- Replace the `SOURCE_NAME` by the name of the source and the `SOURCE_VALUE` by the value of the source.
+- Click in the `GREEN ARROW` to execute.

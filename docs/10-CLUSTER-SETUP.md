@@ -17,8 +17,8 @@ For security reasons Nginx is acting as a reverse proxy for Jenkins, Kibana and 
 
 ## Cluster Overview
 
-![Cluster Overview](./10-CLUSTER-OVERVIEW.png)
-![Logical View](./Enisa%20Logical%20Architecture%20-%20prototype.png)
+![Cluster Overview](./assets/architecture-infrastructure-prototype.png)
+![Logical View](./assets/architecture-logical-prototype.png)
 
 
 ## Prerequisites
